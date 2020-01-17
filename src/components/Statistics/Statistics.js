@@ -4,7 +4,7 @@ import "./Statistics.css";
 const Statistics = () => {
   return (
     <div className="stats-title">
-      <p>{"<User Statistics>"}</p>
+      {/* <p>{"<User Statistics>"}</p> */}
     </div>
   );
 };

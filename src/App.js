@@ -5,6 +5,7 @@ import Clarifai from "clarifai";
 import Navigation from "./components/Navigation/Navigation";
 import Statistics from "./components/Statistics/Statistics";
 import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
+import FacialRecognitionSystem from "./components/FacialRecognitionSystem/FacialRecognitionSystem";
 
 const app = new Clarifai.App({
   apiKey: '818afbfeeff745cd81ee33c3fe23bc9f'
@@ -30,17 +31,23 @@ const particlesOptions = {
 };
 
 function App() {
-  const [input, setInput] = useState("");
+  // const [userInput, setUserInput] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
 
   const onInputChange = event => {
     console.log("event.target.value", event.target.value);
+    // setUserInput(event.target.value);
+    // console.log('userInput' , userInput);
+    setImageUrl(event.target.value);
+    console.log('imageUrl' , imageUrl);
   };
-
+  
   const onButtonSubmit = () => {
-    app.models.predict("a403429f2ddf4b49b307e318f00e528b", "https://samples.clarifai.com/face-det.jpg").then(
+    app.models.predict("a403429f2ddf4b49b307e318f00e528b", imageUrl).then(
     function(response) {
-      console.log("URL submitted. detekting faces.");
+      console.log("detekting faces...");
       console.log('Response' , response);
+      console.log(response.outputs[0].data.regions[0].region_info.bounding_box);
     },
     function(err) {
       console.log("Error loading image.")
@@ -54,8 +61,7 @@ function App() {
       <Navigation />
       <Statistics />
       <ImageLinkForm onInputChange={onInputChange} onButtonSubmit={onButtonSubmit} />
-      {/*
-      <FacialRecognition />} */}
+      <FacialRecognitionSystem imageUrl={imageUrl} />
     </div>
   );
 }
