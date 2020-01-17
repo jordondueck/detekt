@@ -1,7 +1,7 @@
 import React from "react";
 import "./ImageLinkForm.css";
 
-const ImageLinkForm = () => {
+const ImageLinkForm = ({ onInputChange }) => {
   return (
     <div className="form-container">
       <p className="form-title">{"<Title>"}</p>
@@ -9,7 +9,8 @@ const ImageLinkForm = () => {
         <input
           className="form-input"
           type="text"
-          placeholder="Select an image to scan"
+          placeholder="Enter URL of image"
+          onChange={onInputChange}
         />
         <button className="form-button">{"Detect"}</button>
       </div>

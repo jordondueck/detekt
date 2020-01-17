@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Particles from "react-particles-js";
 import Navigation from "./components/Navigation/Navigation";
@@ -25,12 +25,19 @@ const particlesOptions = {
 };
 
 function App() {
+  const [input, setInput] = useState('');
+
+
+  const onInputChange = (event) => {
+    console.log('event.target.value' , event.target.value);
+  }
+
   return (
     <div className="App">
       <Particles className="particles" params={particlesOptions} />
       <Navigation />
       <Statistics />
-      <ImageLinkForm />
+      <ImageLinkForm onInputChange={onInputChange} />
       {/*
       <FacialRecognition />} */}
     </div>
