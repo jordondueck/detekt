@@ -1,11 +1,25 @@
-.frs-container {
-  /* display: flex;
-  justify-content: center; */
-  display: block;
-  text-align: center;
+.frs--container {
+  display: flex;
+  justify-content: center;
+  /* display: block;
+  text-align: center; */
 }
 
-.frs-image {
-  width: 50vw;
+.frs--container-inner {
+  display: block;
+  position: absolute;
+}
+
+.frs--image {
+  width: 600vw;
   max-width: 600px;
+}
+
+.frs--bounding-box {
+  position: absolute;
+  box-shadow: 0 0 0 3px #149df2 inset;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  cursor: pointer;
 }
