@@ -45,3 +45,9 @@
   -webkit-appearance: none;
   -moz-appearance: none;
 }
+
+.form-tip {
+  padding: 0.75rem;
+  font-style: italic;
+  font-size: 0.75rem;
+}

@@ -1,0 +1,11 @@
+.frs-container {
+  /* display: flex;
+  justify-content: center; */
+  display: block;
+  text-align: center;
+}
+
+.frs-image {
+  width: 50vw;
+  max-width: 600px;
+}

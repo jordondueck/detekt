@@ -9,11 +9,12 @@ const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
         <input
           className="form-input"
           type="text"
-          placeholder="https://example.com/images/example"
+          placeholder="https://example.com/images/example.jpg"
           onChange={onInputChange}
         />
         <button className="form-button" onClick={onButtonSubmit}>{"Detect"}</button>
       </div>
+      <p className="form-tip">Note: Larger images take longer to process.</p>
     </div>
   );
 };
