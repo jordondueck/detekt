@@ -29,7 +29,7 @@
   max-width: 400px;
 }
 
-.form-button {
+/* .form-button {
   border: 1px solid;
   border-color: lightblue;
   border-radius: 0.25rem;
@@ -44,7 +44,7 @@
   text-align: center;
   -webkit-appearance: none;
   -moz-appearance: none;
-}
+} */
 
 .form-tip {
   padding: 0.75rem;

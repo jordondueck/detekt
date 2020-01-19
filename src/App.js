@@ -3,6 +3,8 @@ import "./App.css";
 import Particles from "react-particles-js";
 import Clarifai from "clarifai";
 import Navigation from "./components/Navigation/Navigation";
+import SignIn from "./components/SignIn/SignIn";
+import Registration from "./components/Registration/Registration";
 import Statistics from "./components/Statistics/Statistics";
 import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
 import FacialRecognitionSystem from "./components/FacialRecognitionSystem/FacialRecognitionSystem";
@@ -31,9 +33,25 @@ const particlesOptions = {
 };
 
 function App() {
-  // const [userInput, setUserInput] = useState("");
+  const [route, setRoute] = useState("signin");
+  const [isSignedIn, setIsSignedIn] = useState(false);
   const [imageUrl, setImageUrl] = useState("");
   const [boxArea, setBoxArea] = useState("");
+
+  const handleSignIn = () => {
+    // TO DO: User authentication
+    setRoute("home");
+    setIsSignedIn(true);
+  };
+
+  const handleRegisterLink = () => {
+    // TO DO: User validation + database insert
+    setRoute("signin");
+  };
+
+  const handleRouteChange = (requestedRoute) => {
+    setRoute(requestedRoute);
+  }
 
   const onInputChange = event => {
     console.log("event.target.value", event.target.value);
@@ -58,34 +76,41 @@ function App() {
   };
 
   const calculateFaceLocation = data => {
-    const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
-    const image = document.getElementById('inputImage');
+    const clarifaiFace =
+      data.outputs[0].data.regions[0].region_info.bounding_box;
+    const image = document.getElementById("inputImage");
     const width = Number(image.width);
     const height = Number(image.height);
-    console.log('image width' , width);
-    console.log('image height' , height);
+    console.log("image width", width);
+    console.log("image height", height);
     return {
       topRow: clarifaiFace.top_row * height,
       leftCol: clarifaiFace.left_col * width,
-      bottomRow: height - (clarifaiFace.bottom_row * height),
-      rightCol: width - (clarifaiFace.right_col * width)
-    }
+      bottomRow: height - clarifaiFace.bottom_row * height,
+      rightCol: width - clarifaiFace.right_col * width
+    };
   };
 
-  const displayFaceBox = (box) => {
+  const displayFaceBox = box => {
     setBoxArea(box);
-  }
+  };
 
   return (
     <div className="App">
       <Particles className="particles" params={particlesOptions} />
-      <Navigation />
-      <Statistics />
-      <ImageLinkForm
-        onInputChange={onInputChange}
-        onButtonSubmit={onButtonSubmit}
-      />
-      <FacialRecognitionSystem imageUrl={imageUrl} boxArea={boxArea} />
+      <Navigation route={route} handleRouteChange={handleRouteChange} isSignedIn={isSignedIn} />
+      {route === "signin" ? (
+        <SignIn handleRouteChange={handleRouteChange} />
+      ) : route === "registration" ? (<Registration />) : (
+        <section>
+          <Statistics />
+          <ImageLinkForm
+            onInputChange={onInputChange}
+            onButtonSubmit={onButtonSubmit}
+          />
+          <FacialRecognitionSystem imageUrl={imageUrl} boxArea={boxArea} />
+        </section>
+      )}
     </div>
   );
 }

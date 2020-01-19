@@ -2,7 +2,7 @@ import React from "react";
 import "./Navigation.css";
 import Logo from "../Logo/Logo";
 
-const Navigation = () => {
+const Navigation = ({ route, isSignedIn, handleRouteChange }) => {
   return (
     <nav className="nav">
       <div className="nav-section">
@@ -16,7 +16,28 @@ const Navigation = () => {
           <h3>Facial Recognition System</h3>
         </li>
       </ul>
-      <p className="nav-section nav-item">Sign Out</p>
+      {route === "signin" ? (
+        <p
+        className="nav-section nav-item"
+        onClick={() => handleRouteChange("registration")}
+      >
+        Register
+      </p>
+      ) : route === "registration" ? (
+        <p
+          className="nav-section nav-item"
+          onClick={() => handleRouteChange("signin")}
+        >
+          Sign In
+        </p>
+      ) : (
+        <p
+          className="nav-section nav-item"
+          onClick={() => handleRouteChange("signin")}
+        >
+          Sign Out
+        </p>
+      )}
     </nav>
   );
 };
