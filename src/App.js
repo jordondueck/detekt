@@ -38,22 +38,21 @@ function App() {
   const [imageUrl, setImageUrl] = useState("");
   const [boxArea, setBoxArea] = useState("");
 
-  const handleSignIn = () => {
+  const handleSignIn = (status) => {
     // TO DO: User authentication
-    setRoute("home");
-    setIsSignedIn(true);
+    setIsSignedIn(status);
   };
 
-  const handleRegisterLink = () => {
+  const handleRegister = () => {
     // TO DO: User validation + database insert
-    setRoute("signin");
   };
 
-  const handleRouteChange = (requestedRoute) => {
+  const handleRouteChange = requestedRoute => {
+    requestedRoute === "home" ? handleSignIn(true) : handleSignIn(false);
     setRoute(requestedRoute);
-  }
+  };
 
-  const onInputChange = event => {
+  const handleInputChange = event => {
     console.log("event.target.value", event.target.value);
     // setUserInput(event.target.value);
     // console.log('userInput' , userInput);
@@ -61,7 +60,7 @@ function App() {
     console.log("imageUrl", imageUrl);
   };
 
-  const onButtonSubmit = () => {
+  const handleButtonSubmit = () => {
     app.models
       .predict("a403429f2ddf4b49b307e318f00e528b", imageUrl)
       .then(response => {
@@ -98,15 +97,21 @@ function App() {
   return (
     <div className="App">
       <Particles className="particles" params={particlesOptions} />
-      <Navigation route={route} handleRouteChange={handleRouteChange} isSignedIn={isSignedIn} />
+      <Navigation
+        route={route}
+        handleRouteChange={handleRouteChange}
+        isSignedIn={isSignedIn}
+      />
       {route === "signin" ? (
         <SignIn handleRouteChange={handleRouteChange} />
-      ) : route === "registration" ? (<Registration />) : (
+      ) : route === "registration" ? (
+        <Registration handleRouteChange={handleRouteChange} />
+      ) : (
         <section>
           <Statistics />
           <ImageLinkForm
-            onInputChange={onInputChange}
-            onButtonSubmit={onButtonSubmit}
+            handleInputChange={handleInputChange}
+            handleButtonSubmit={handleButtonSubmit}
           />
           <FacialRecognitionSystem imageUrl={imageUrl} boxArea={boxArea} />
         </section>

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Registration.css";
 
-const Registration = () => {
+const Registration = ({ handleRouteChange }) => {
   return (
     <div className="registration--container">
       <div className="registration--form--container">
@@ -58,6 +58,7 @@ const Registration = () => {
         <div className="">
           <input
             className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
+            onClick={() => handleRouteChange("signin")}
             type="submit"
             value="Register"
           />

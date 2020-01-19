@@ -30,14 +30,14 @@ const Navigation = ({ route, isSignedIn, handleRouteChange }) => {
         >
           Sign In
         </p>
-      ) : (
+      ) : isSignedIn ? (
         <p
           className="nav-section nav-item"
           onClick={() => handleRouteChange("signin")}
         >
           Sign Out
         </p>
-      )}
+      ) : undefined}
     </nav>
   );
 };
