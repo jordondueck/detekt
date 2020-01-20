@@ -36,7 +36,7 @@ function App() {
   const [route, setRoute] = useState("signin");
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [imageUrl, setImageUrl] = useState("");
-  const [boxArea, setBoxArea] = useState("");
+  const [boxAreas, setBoxAreas] = useState([{}]);
 
   const handleSignIn = (status) => {
     // TO DO: User authentication
@@ -65,33 +65,44 @@ function App() {
       .predict("a403429f2ddf4b49b307e318f00e528b", imageUrl)
       .then(response => {
         console.log("detekting faces...");
-        console.log("Response", response);
-        console.log(
-          response.outputs[0].data.regions[0].region_info.bounding_box
-        );
-        displayFaceBox(calculateFaceLocation(response));
+        // console.log("Response", response);
+        // console.log(
+        //   response.outputs[0].data.regions[0].region_info.bounding_box
+        // );
+        // const mapRegions = response.outputs[0].data.regions.map(faceRegion => {
+        //   return faceRegion.region_info.bounding_box;
+        // })
+        displayFaceBoxes(calculateFaceLocations(response));
       })
       .catch(err => console.log("Error loading image: ", err));
   };
 
-  const calculateFaceLocation = data => {
-    const clarifaiFace =
-      data.outputs[0].data.regions[0].region_info.bounding_box;
+  const calculateFaceLocations = data => {
+    console.log('mapRegions' , data);
+    const clarifaiFaces =
+    data.outputs[0].data.regions.map(faceRegion => {
+      return faceRegion.region_info.bounding_box;
+    })
+    console.log('clarifaiFaces' , clarifaiFaces);
     const image = document.getElementById("inputImage");
     const width = Number(image.width);
     const height = Number(image.height);
     console.log("image width", width);
     console.log("image height", height);
-    return {
-      topRow: clarifaiFace.top_row * height,
-      leftCol: clarifaiFace.left_col * width,
-      bottomRow: height - clarifaiFace.bottom_row * height,
-      rightCol: width - clarifaiFace.right_col * width
-    };
+    return clarifaiFaces.map(clarifaiFace => {
+      console.log('clarifaiFace' , clarifaiFace);
+      return {
+        topRow: clarifaiFace.top_row * height,
+        leftCol: clarifaiFace.left_col * width,
+        bottomRow: height - clarifaiFace.bottom_row * height,
+        rightCol: width - clarifaiFace.right_col * width
+      };
+    })
   };
 
-  const displayFaceBox = box => {
-    setBoxArea(box);
+  const displayFaceBoxes = boxes => {
+    console.log('boxes' , boxes)
+    setBoxAreas(boxes);
   };
 
   return (
@@ -113,7 +124,7 @@ function App() {
             handleInputChange={handleInputChange}
             handleButtonSubmit={handleButtonSubmit}
           />
-          <FacialRecognitionSystem imageUrl={imageUrl} boxArea={boxArea} />
+          <FacialRecognitionSystem imageUrl={imageUrl} boxAreas={boxAreas} />
         </section>
       )}
     </div>

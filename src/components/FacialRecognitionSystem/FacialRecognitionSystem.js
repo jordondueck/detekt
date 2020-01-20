@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./FacialRecognitionSystem.css";
+import BoundingBox from "../BoundingBox/BoundingBox";
 
-const FacialRecognitionSystem = ({ imageUrl, boxArea }) => {
+const FacialRecognitionSystem = ({ imageUrl, boxAreas }) => {
   const [imageStatus, setImageStatus] = useState("Loading...");
 
   const handleImageLoaded = () => {
@@ -9,7 +10,7 @@ const FacialRecognitionSystem = ({ imageUrl, boxArea }) => {
   };
 
   if (imageUrl !== "") {
-    console.log("boxArea", boxArea);
+    console.log("boxAreas", boxAreas);
     return (
       <div className="frs--container">
         <div className="frs--container-inner">
@@ -20,15 +21,7 @@ const FacialRecognitionSystem = ({ imageUrl, boxArea }) => {
             src={imageUrl}
             alt=""
           />
-          <div
-            className="frs--bounding-box"
-            style={{
-              top: boxArea.topRow,
-              left: boxArea.leftCol,
-              bottom: boxArea.bottomRow,
-              right: boxArea.rightCol
-            }}
-          ></div>
+          <BoundingBox boxAreas={boxAreas} />
           <p style={{ textAlign: "center" }}>{imageStatus}</p>
         </div>
       </div>
