@@ -53,6 +53,7 @@ function App() {
   };
 
   const handleInputChange = event => {
+    setBoxAreas([{}]);
     console.log("event.target.value", event.target.value);
     // setUserInput(event.target.value);
     // console.log('userInput' , userInput);
