@@ -1,7 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./SignIn.css";
 
 const SignIn = ({ handleRouteChange }) => {
+  const [emailInput, setEmailInput] = useState("");
+  const [passwordInput, setPasswordInput] = useState("");
+
+  const handleEmailChange = event => {
+    setEmailInput(event.target.value);
+  };
+
+  const handlePasswordChange = event => {
+    setPasswordInput(event.target.value);
+  };
+
+  const handleSignIn = () => {
+    console.log("Email", emailInput);
+    console.log("Password", passwordInput);
+    // Fetch home page from server
+    fetch("http://localhost:3000/signin", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: emailInput,
+        password: passwordInput
+      })
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data === "Successfully logged in") {
+          handleRouteChange("home");
+        }
+      });
+  };
+
   return (
     <div className="signin--container">
       <div className="signin--form--container">
@@ -16,6 +47,7 @@ const SignIn = ({ handleRouteChange }) => {
               type="email"
               name="email-address"
               id="email-address"
+              onChange={handleEmailChange}
             />
           </div>
           <div className="mv3">
@@ -27,6 +59,7 @@ const SignIn = ({ handleRouteChange }) => {
               type="password"
               name="password"
               id="password"
+              onChange={handlePasswordChange}
             />
           </div>
           {/* <label className="pa0 ma0 lh-copy f6 pointer">
@@ -36,13 +69,18 @@ const SignIn = ({ handleRouteChange }) => {
         <div className="">
           <input
             className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
-            onClick={() => handleRouteChange("home")}
             type="submit"
             value="Sign in"
+            onClick={handleSignIn}
           />
         </div>
         <div className="lh-copy mt3">
-          <p className="f6 link dim black db pointer" onClick={() => handleRouteChange("registration")}>Sign up</p>
+          <p
+            className="f6 link dim black db pointer"
+            onClick={() => handleRouteChange("registration")}
+          >
+            Sign up
+          </p>
           {/* <p className="f6 link dim black db pointer">Forgot your password?</p> */}
         </div>
       </div>
