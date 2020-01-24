@@ -37,10 +37,13 @@ function App() {
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [imageUrl, setImageUrl] = useState("");
   const [boxAreas, setBoxAreas] = useState([{}]);
+  const [user, setUser] = useState([{}]);
 
-  const handleSignIn = (status) => {
+  const handleSignIn = (requestingUser) => {
     // TO DO: User authentication
-    setIsSignedIn(status);
+    console.log('requestingUser' , requestingUser);
+    setUser(requestingUser);
+    setIsSignedIn(true);
   };
 
   const handleRegister = () => {
@@ -48,7 +51,7 @@ function App() {
   };
 
   const handleRouteChange = requestedRoute => {
-    requestedRoute === "home" ? handleSignIn(true) : handleSignIn(false);
+    // requestedRoute === "home" ? handleSignIn(true) : handleSignIn(false);
     setRoute(requestedRoute);
   };
 
@@ -115,7 +118,7 @@ function App() {
         isSignedIn={isSignedIn}
       />
       {route === "signin" ? (
-        <SignIn handleRouteChange={handleRouteChange} />
+        <SignIn handleRouteChange={handleRouteChange} handleSignIn={handleSignIn} />
       ) : route === "registration" ? (
         <Registration handleRouteChange={handleRouteChange} />
       ) : (

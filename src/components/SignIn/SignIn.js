@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./SignIn.css";
 
-const SignIn = ({ handleRouteChange }) => {
+const SignIn = ({ handleRouteChange, handleSignIn }) => {
   const [emailInput, setEmailInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
 
@@ -13,7 +13,7 @@ const SignIn = ({ handleRouteChange }) => {
     setPasswordInput(event.target.value);
   };
 
-  const handleSignIn = () => {
+  const handleSignInButton = () => {
     console.log("Email", emailInput);
     console.log("Password", passwordInput);
     // Fetch home page from server
@@ -26,8 +26,9 @@ const SignIn = ({ handleRouteChange }) => {
       })
     })
       .then(response => response.json())
-      .then(data => {
-        if (data === "Successfully logged in") {
+      .then(user => {
+        if (user) {
+          handleSignIn(user);
           handleRouteChange("home");
         }
       });
@@ -71,7 +72,7 @@ const SignIn = ({ handleRouteChange }) => {
             className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
             type="submit"
             value="Sign in"
-            onClick={handleSignIn}
+            onClick={handleSignInButton}
           />
         </div>
         <div className="lh-copy mt3">

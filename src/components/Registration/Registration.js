@@ -1,7 +1,53 @@
-import React from "react";
+import React , { useState } from "react";
 import "./Registration.css";
 
 const Registration = ({ handleRouteChange }) => {
+  const [firstNameInput, setFirstNameInput] = useState("");
+  const [lastNameInput, setLastNameInput] = useState("");
+  const [emailInput, setEmailInput] = useState("");
+  const [passwordInput, setPasswordInput] = useState("");
+
+  const handleFirstNameChange = event => {
+    setFirstNameInput(event.target.value);
+  };
+
+  const handleLastNameChange = event => {
+    setLastNameInput(event.target.value);
+  };
+
+  const handleEmailChange = event => {
+    setEmailInput(event.target.value);
+  };
+
+  const handlePasswordChange = event => {
+    setPasswordInput(event.target.value);
+  };
+
+  const handleRegisterButton = () => {
+    console.log("First Name", firstNameInput);
+    console.log("Last Name", lastNameInput);
+    console.log("Email", emailInput);
+    console.log("Password", passwordInput);
+    // Fetch home page from server
+    fetch("http://localhost:3000/register", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        // firstName: firstNameInput,
+        // lastName: lastNameInput,
+        name: (firstNameInput + " " + lastNameInput),
+        email: emailInput,
+        password: passwordInput
+      })
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data === "Successfully registered") {
+          handleRouteChange("signin");
+        }
+      });
+  };
+
   return (
     <div className="registration--container">
       <div className="registration--form--container">
@@ -16,6 +62,7 @@ const Registration = ({ handleRouteChange }) => {
               type="fname"
               name="fname"
               id="fname"
+              onChange={handleFirstNameChange}
             />
           </div>
           <div className="mv3">
@@ -27,6 +74,7 @@ const Registration = ({ handleRouteChange }) => {
               type="lname"
               name="lname"
               id="lname"
+              onChange={handleLastNameChange}
             />
           </div>
           <div className="mv3">
@@ -38,6 +86,7 @@ const Registration = ({ handleRouteChange }) => {
               type="email"
               name="email-address"
               id="email-address"
+              onChange={handleEmailChange}
             />
           </div>
           <div className="mv3">
@@ -49,6 +98,7 @@ const Registration = ({ handleRouteChange }) => {
               type="password"
               name="password"
               id="password"
+              onChange={handlePasswordChange}
             />
           </div>
           {/* <label className="pa0 ma0 lh-copy f6 pointer">
@@ -58,9 +108,10 @@ const Registration = ({ handleRouteChange }) => {
         <div className="">
           <input
             className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
-            onClick={() => handleRouteChange("signin")}
             type="submit"
             value="Register"
+            onClick={handleRegisterButton}
+
           />
         </div>
         <div className="lh-copy mt3">
