@@ -46,8 +46,8 @@ const Registration = ({ handleRouteChange }) => {
         if (data) {
           handleRouteChange("signin");
         }
-        // console.log('data' , data);
-      });
+      })
+      .catch(console.log);
   };
 
   return (

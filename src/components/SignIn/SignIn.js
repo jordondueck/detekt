@@ -31,7 +31,8 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
           handleSignIn(user);
           handleRouteChange("home");
         }
-      });
+      })
+      .catch(console.log);
   };
 
   return (

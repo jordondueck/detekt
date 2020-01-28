@@ -81,7 +81,8 @@ function App() {
             itemsdetected: response.outputs[0].data.regions.length,
             accountid: user.accountid
           })
-        });
+        })
+        .catch(console.log);
         // console.log("detekting faces...");
         console.log("handleButtonSubmit response", response);
         displayFaceBoxes(calculateFaceLocations(response));
