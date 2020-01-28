@@ -28,23 +28,25 @@ const Registration = ({ handleRouteChange }) => {
     console.log("Last Name", lastNameInput);
     console.log("Email", emailInput);
     console.log("Password", passwordInput);
-    // Fetch home page from server
     fetch("http://localhost:3000/register", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        // firstName: firstNameInput,
-        // lastName: lastNameInput,
-        name: (firstNameInput + " " + lastNameInput),
+        firstname: firstNameInput,
+        lastname: lastNameInput,
         email: emailInput,
         password: passwordInput
       })
     })
-      .then(response => response.json())
-      .then(data => {
-        if (data === "Successfully registered") {
+      .then(response => {
+        if(response.status === 200)
+        return response.json();
+      })
+        .then(data => {
+        if (data) {
           handleRouteChange("signin");
         }
+        // console.log('data' , data);
       });
   };
 
