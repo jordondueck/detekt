@@ -59,7 +59,7 @@ function App() {
   };
 
   const handleButtonSubmit = () => {
-    fetch("http://localhost:3000/clarifai", {
+    fetch("https://salty-mesa-37106.herokuapp.com/clarifai", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -68,7 +68,7 @@ function App() {
     })
       .then(response => response.json())
       .then(response => {
-        fetch("http://localhost:3000/image", {
+        fetch("https://salty-mesa-37106.herokuapp.com/image", {
           method: "post",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
