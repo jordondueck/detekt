@@ -14,8 +14,6 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
   };
 
   const handleSignInButton = () => {
-    console.log("Email", emailInput);
-    console.log("Password", passwordInput);
     fetch("http://localhost:3000/signin", {
       method: "post",
       headers: { "Content-Type": "application/json" },
@@ -27,7 +25,6 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
       .then(response => response.json())
       .then(user => {
         if (user.email) {
-          console.log('user' , user);
           handleSignIn(user);
           handleRouteChange("home");
         }

@@ -24,10 +24,6 @@ const Registration = ({ handleRouteChange }) => {
   };
 
   const handleRegisterButton = () => {
-    console.log("First Name", firstNameInput);
-    console.log("Last Name", lastNameInput);
-    console.log("Email", emailInput);
-    console.log("Password", passwordInput);
     fetch("http://localhost:3000/register", {
       method: "post",
       headers: { "Content-Type": "application/json" },

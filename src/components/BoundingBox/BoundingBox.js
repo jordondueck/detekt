@@ -2,7 +2,6 @@ import React from "react";
 import "./BoundingBox.css";
 
 const BoundingBox = ({ boxAreas }) => {
-  console.log('BoundingBox: boxAreas' , boxAreas);
   return (
     <div>
       {boxAreas.map((boxArea, index) => {

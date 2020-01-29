@@ -1,17 +1,12 @@
 import React, { useState } from "react";
 import "./App.css";
 import Particles from "react-particles-js";
-import Clarifai from "clarifai";
 import Navigation from "./components/Navigation/Navigation";
 import SignIn from "./components/SignIn/SignIn";
 import Registration from "./components/Registration/Registration";
 import Statistics from "./components/Statistics/Statistics";
 import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
 import FacialRecognitionSystem from "./components/FacialRecognitionSystem/FacialRecognitionSystem";
-
-const app = new Clarifai.App({
-  apiKey: "818afbfeeff745cd81ee33c3fe23bc9f"
-});
 
 const particlesOptions = {
   particles: {
@@ -47,13 +42,8 @@ function App() {
   };
 
   const handleSignIn = requestingUser => {
-    console.log("requestingUser", requestingUser);
     setUser(requestingUser);
     setIsSignedIn(true);
-  };
-
-  const handleRegister = () => {
-    // TO DO: User validation + database insert
   };
 
   const handleRouteChange = requestedRoute => {
@@ -69,11 +59,15 @@ function App() {
   };
 
   const handleButtonSubmit = () => {
-    app.models
-      .predict("a403429f2ddf4b49b307e318f00e528b", imageUrl)
+    fetch("http://localhost:3000/clarifai", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        imageUrl: imageUrl
+      })
+    })
+      .then(response => response.json())
       .then(response => {
-        console.log('itemsdetected' , response.outputs[0].data.regions.length);
-        console.log('accountid' , user.accountid);
         fetch("http://localhost:3000/image", {
           method: "post",
           headers: { "Content-Type": "application/json" },
@@ -81,26 +75,20 @@ function App() {
             itemsdetected: response.outputs[0].data.regions.length,
             accountid: user.accountid
           })
-        })
-        .catch(console.log);
-        // console.log("detekting faces...");
-        console.log("handleButtonSubmit response", response);
+        }).catch(console.log);
         displayFaceBoxes(calculateFaceLocations(response));
       })
       .catch(err => console.log("Error loading image: ", err));
   };
 
   const calculateFaceLocations = data => {
-    // console.log("mapRegions", data);
     const clarifaiFaces = data.outputs[0].data.regions.map(faceRegion => {
       return faceRegion.region_info.bounding_box;
     });
-    // console.log("clarifaiFaces", clarifaiFaces);
     const image = document.getElementById("inputImage");
     const width = Number(image.width);
     const height = Number(image.height);
     return clarifaiFaces.map(clarifaiFace => {
-      // console.log("clarifaiFace", clarifaiFace);
       return {
         topRow: clarifaiFace.top_row * height,
         leftCol: clarifaiFace.left_col * width,
@@ -111,7 +99,6 @@ function App() {
   };
 
   const displayFaceBoxes = boxes => {
-    // console.log("boxes", boxes);
     setBoxAreas(boxes);
   };
 

@@ -10,7 +10,6 @@ const FacialRecognitionSystem = ({ imageUrl, boxAreas }) => {
   };
 
   if (imageUrl !== "") {
-    console.log("boxAreas", boxAreas);
     return (
       <div className="frs--container">
         <div className="frs--container-inner">
