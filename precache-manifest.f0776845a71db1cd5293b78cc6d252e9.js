@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "25287e73a68397be9363f8d4bd030630",
+    "revision": "91681d9848727d4f582fbb35b5afffe1",
     "url": "/detekt/index.html"
   },
   {
-    "revision": "7c4e3f4a97f4ef2a39c6",
+    "revision": "16e5f043491c3be7b1a9",
     "url": "/detekt/static/css/main.58c2f1af.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/detekt/static/js/2.3cea5a11.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7c4e3f4a97f4ef2a39c6",
-    "url": "/detekt/static/js/main.1c5539f5.chunk.js"
+    "revision": "16e5f043491c3be7b1a9",
+    "url": "/detekt/static/js/main.068d1aff.chunk.js"
   },
   {
     "revision": "b5ec48ab4d10024016b9",
