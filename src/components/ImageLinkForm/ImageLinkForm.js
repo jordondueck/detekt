@@ -16,7 +16,7 @@ const ImageLinkForm = ({ handleInputChange, handleButtonSubmit }) => {
           {"Detect"}
         </button>
       </div>
-      <p className="form-tip">Note: Larger images take longer to process.</p>
+      <p className="form-tip">Note: Large images take longer to process.</p>
     </div>
   );
 };

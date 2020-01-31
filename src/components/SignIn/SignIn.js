@@ -13,7 +13,8 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
     setPasswordInput(event.target.value);
   };
 
-  const handleSignInButton = () => {
+  const handleSignInButton = event => {
+    event.preventDefault();
     fetch("https://salty-mesa-37106.herokuapp.com/signin", {
       method: "post",
       headers: { "Content-Type": "application/json" },
@@ -34,7 +35,7 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
 
   return (
     <div className="signin--container">
-      <div className="signin--form--container">
+      <form className="signin--form--container">
         <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
           <legend className="f4 fw6 ph0 mh0">Sign In</legend>
           <div className="mt3">
@@ -82,7 +83,7 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
           </p>
           {/* <p className="f6 link dim black db pointer">Forgot your password?</p> */}
         </div>
-      </div>
+      </form>
     </div>
   );
 };

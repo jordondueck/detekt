@@ -1,4 +1,4 @@
-import React , { useState } from "react";
+import React, { useState } from "react";
 import "./Registration.css";
 
 const Registration = ({ handleRouteChange }) => {
@@ -23,7 +23,8 @@ const Registration = ({ handleRouteChange }) => {
     setPasswordInput(event.target.value);
   };
 
-  const handleRegisterButton = () => {
+  const handleRegisterButton = event => {
+    event.preventDefault();
     fetch("https://salty-mesa-37106.herokuapp.com/register", {
       method: "post",
       headers: { "Content-Type": "application/json" },
@@ -35,10 +36,9 @@ const Registration = ({ handleRouteChange }) => {
       })
     })
       .then(response => {
-        if(response.status === 200)
-        return response.json();
+        if (response.status === 200) return response.json();
       })
-        .then(data => {
+      .then(data => {
         if (data) {
           handleRouteChange("signin");
         }
@@ -48,7 +48,7 @@ const Registration = ({ handleRouteChange }) => {
 
   return (
     <div className="registration--container">
-      <div className="registration--form--container">
+      <form className="registration--form--container">
         <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
           <legend className="f4 fw6 ph0 mh0">Register</legend>
           <div className="mt3">
@@ -109,13 +109,12 @@ const Registration = ({ handleRouteChange }) => {
             type="submit"
             value="Register"
             onClick={handleRegisterButton}
-
           />
         </div>
         <div className="lh-copy mt3">
           {/* <p className="f6 link dim black db pointer">Forgot your password?</p> */}
         </div>
-      </div>
+      </form>
     </div>
   );
 };
