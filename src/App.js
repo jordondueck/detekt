@@ -34,6 +34,11 @@ function App() {
   const [boxAreas, setBoxAreas] = useState([{}]);
   const [user, setUser] = useState([{}]);
 
+  fetch("https://salty-mesa-37106.herokuapp.com/", {
+    method: "get",
+    headers: { "Content-Type": "application/json" }
+  }).catch(console.log);
+
   const setDefaultState = () => {
     setIsSignedIn(false);
     setImageUrl("");
