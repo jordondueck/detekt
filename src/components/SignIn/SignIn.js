@@ -37,7 +37,7 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
     <div className="signin--container">
       <form className="signin--form--container">
         <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-          <legend className="f4 fw6 ph0 mh0">Sign In</legend>
+          <h3 className="f4 fw6 ph0 mh0">Sign In</h3>
           <div className="mt3">
             <label className="db fw6 lh-copy f6" htmlFor="email-address">
               Email

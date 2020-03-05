@@ -50,7 +50,7 @@ const Registration = ({ handleRouteChange }) => {
     <div className="registration--container">
       <form className="registration--form--container">
         <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-          <legend className="f4 fw6 ph0 mh0">Register</legend>
+          <h3 className="f4 fw6 ph0 mh0">Register</h3>
           <div className="mt3">
             <label className="db fw6 lh-copy f6" htmlFor="fname">
               First Name
