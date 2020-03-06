@@ -1,16 +1,16 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import SignInSchema from "../ValidateForm/ValidateForm";
+import { SignInSchema } from "../ValidateForm/ValidateForm";
 import {
   Button,
   FormControl,
-  FormGroup,
-  FormLabel
+  FormGroup
+  // FormLabel
 } from "react-bootstrap";
 import "./SignIn.css";
 
 const SignIn = ({ handleRouteChange, handleSignIn }) => {
-    return (
+  return (
     <Formik
       initialValues={{ email: "", password: "" }}
       validationSchema={SignInSchema}
@@ -29,7 +29,7 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
               handleSignIn(user);
               handleRouteChange("home");
             }
-            setSubmitting(false);
+            // setSubmitting(false);
           })
           .catch(console.log);
       }}
@@ -63,7 +63,7 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
             </Field>
             <ErrorMessage name="password" component="div" />
           </FormGroup>
-          <Button variant="outline-dark" type="submit" disabled={isSubmitting}>
+          <Button variant="outline-dark" type="submit">
             Submit
           </Button>
         </Form>

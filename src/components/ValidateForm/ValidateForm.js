@@ -1,13 +1,27 @@
 import * as Yup from "yup";
 
-  const SignInSchema = Yup.object().shape({
-    email: Yup.string()
-      .email('Invalid email')
-      .required('Required'),
-      password: Yup.string()
-      .min(8, 'Password must be at least 8 characters')
-      .max(32, 'Password must be no more than 32 characters')
-      .required('Required')
-  });
+export const SignInSchema = Yup.object().shape({
+  email: Yup.string()
+    .email("Invalid email")
+    .required("Required"),
+  password: Yup.string()
+    .min(8, "Password must be at least 8 characters")
+    .max(32, "Password must be no more than 32 characters")
+    .required("Required")
+});
 
-export default SignInSchema;
+export const RegisterSchema = Yup.object().shape({
+  firstname: Yup.string()
+    .max(32, "First name must be no more than 32 characters")
+    .required("Required"),
+  lastname: Yup.string()
+    .max(32, "First name must be no more than 32 characters")
+    .required("Required"),
+  email: Yup.string()
+    .email("Invalid email")
+    .required("Required"),
+  password: Yup.string()
+    .min(8, "Password must be at least 8 characters")
+    .max(32, "Password must be no more than 32 characters")
+    .required("Required")
+});
