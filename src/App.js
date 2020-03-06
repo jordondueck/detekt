@@ -116,12 +116,16 @@ function App() {
         isSignedIn={isSignedIn}
       />
       {route === "signin" ? (
+        <section className="container">
         <SignIn
           handleRouteChange={handleRouteChange}
           handleSignIn={handleSignIn}
         />
+        </section>
       ) : route === "registration" ? (
+        <section className="container">
         <Registration handleRouteChange={handleRouteChange} />
+        </section>
       ) : (
         <section>
           <Statistics />
