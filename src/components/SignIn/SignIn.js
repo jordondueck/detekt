@@ -39,11 +39,11 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
           <h2>Sign In</h2>
           <FormGroup controlId="formEmail">
             {/* <FormLabel>Email</FormLabel> */}
-            <Field type="email" name="email">
+            <Field name="email">
               {({ field, form, meta }) => (
                 <FormControl
-                  type="email"
                   {...field}
+                  type="email"
                   placeholder="Email address"
                 />
               )}
@@ -52,11 +52,11 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
           </FormGroup>
           <FormGroup controlId="formPassword">
             {/* <FormLabel>Password</FormLabel> */}
-            <Field type="password" name="password">
+            <Field name="password">
               {({ field, form, meta }) => (
                 <FormControl
-                  type="password"
                   {...field}
+                  type="password"
                   placeholder="Password"
                 />
               )}
