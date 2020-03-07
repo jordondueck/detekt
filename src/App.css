@@ -10,9 +10,12 @@
   align-items: center;
   -ms-flex-align: center;
   justify-content: center;
-  text-align: center;
 }
 
+.form {
+  max-width: 20rem;
+  width: 50%;
+}
 
 /* Headers */
 h1,

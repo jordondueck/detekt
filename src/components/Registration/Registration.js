@@ -37,33 +37,33 @@ const Registration = ({ handleRouteChange }) => {
       }}
     >
       {({ isSubmitting }) => (
-        <Form className="form-register">
+        <Form className="form">
           <h2>Register</h2>
           <FormGroup controlId="formFirstName">
             {/* <FormLabel>First Name</FormLabel> */}
-            <Field type="text" name="firstname">
+            <Field name="firstname">
               {({ field, form, meta }) => (
-                <FormControl type="text" {...field} placeholder="First Name" />
+                <FormControl {...field} type="text" placeholder="First name" />
               )}
             </Field>
             <ErrorMessage name="firstname" component="div" />
           </FormGroup>
           <FormGroup controlId="formLastName">
             {/* <FormLabel>Last Name</FormLabel> */}
-            <Field type="text" name="lastname">
+            <Field name="lastname">
               {({ field, form, meta }) => (
-                <FormControl type="text" {...field} placeholder="Last Name" />
+                <FormControl {...field} type="text" placeholder="Last name" />
               )}
             </Field>
             <ErrorMessage name="lastname" component="div" />
           </FormGroup>
           <FormGroup controlId="formEmail">
             {/* <FormLabel>Email</FormLabel> */}
-            <Field type="email" name="email">
+            <Field name="email">
               {({ field, form, meta }) => (
                 <FormControl
-                  type="email"
                   {...field}
+                  type="email"
                   placeholder="Email address"
                 />
               )}
@@ -72,11 +72,11 @@ const Registration = ({ handleRouteChange }) => {
           </FormGroup>
           <FormGroup controlId="formPassword">
             {/* <FormLabel>Password</FormLabel> */}
-            <Field type="password" name="password">
+            <Field name="password">
               {({ field, form, meta }) => (
                 <FormControl
-                  type="password"
                   {...field}
+                  type="password"
                   placeholder="Password"
                 />
               )}
