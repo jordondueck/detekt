@@ -84,7 +84,7 @@ const Registration = ({ handleRouteChange }) => {
             <ErrorMessage name="password" component="div" />
           </FormGroup>
           <Button variant="outline-dark" type="submit" disabled={isSubmitting}>
-            Submit
+            Register
           </Button>
         </Form>
       )}

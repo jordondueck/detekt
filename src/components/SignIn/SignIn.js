@@ -64,7 +64,7 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
             <ErrorMessage name="password" component="div" />
           </FormGroup>
           <Button variant="outline-dark" type="submit">
-            Submit
+            Sign In
           </Button>
         </Form>
       )}
