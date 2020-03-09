@@ -1,6 +1,6 @@
 {
-  "name": "facial-recognition-system",
-  "version": "0.1.0",
+  "name": "detekt",
+  "version": "0.1.1",
   "private": true,
   "homepage": "https://jordondueck.github.io/detekt",
   "dependencies": {
