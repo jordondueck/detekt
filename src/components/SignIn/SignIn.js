@@ -37,31 +37,37 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
       {({ isSubmitting }) => (
         <Form className="form">
           <h2>Sign In</h2>
-          <FormGroup controlId="formEmail">
+          <FormGroup controlId="email">
             {/* <FormLabel>Email</FormLabel> */}
             <Field name="email">
-              {({ field, form, meta }) => (
+              {({ field, meta }) => (
                 <FormControl
                   {...field}
+                  {...meta}
+                  className={meta.error && meta.touched ? "input--error" : ""}
+                  name="email"
                   type="email"
                   placeholder="Email address"
                 />
               )}
             </Field>
-            <ErrorMessage name="email" component="div" />
+            <ErrorMessage className="error" name="email" component="div" />
           </FormGroup>
-          <FormGroup controlId="formPassword">
+          <FormGroup controlId="password">
             {/* <FormLabel>Password</FormLabel> */}
             <Field name="password">
-              {({ field, form, meta }) => (
+              {({ field, meta }) => (
                 <FormControl
                   {...field}
+                  {...meta}
+                  className={meta.error && meta.touched ? "input--error" : ""}
+                  name="password"
                   type="password"
                   placeholder="Password"
                 />
               )}
             </Field>
-            <ErrorMessage name="password" component="div" />
+            <ErrorMessage className="error" name="password" component="div" />
           </FormGroup>
           <Button variant="outline-dark" type="submit">
             Sign In

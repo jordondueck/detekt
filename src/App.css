@@ -17,6 +17,21 @@
   width: 50%;
 }
 
+input:invalid {
+  box-shadow: none;
+}
+
+.input--error {
+  border: 1px solid #EB0000;
+}
+
+.error {
+  font-size: 0.75rem;
+  color: #EB0000;
+}
+
+
+
 /* Headers */
 h1,
 h2,
