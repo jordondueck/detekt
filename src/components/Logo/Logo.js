@@ -1,17 +1,19 @@
-import React from "react";
+import React, { Fragment } from "react";
 import "./Logo.css";
-import Tilt from "react-tilt";
+// import Tilt from "react-tilt";
 import logo from "./logo.png";
 
 const Logo = () => {
   return (
-    <div className="logo">
-      <Tilt options={{ max: 50 }}>
-        <div>
+    <Fragment>
+    {/* // <div className="logo"> */}
+      {/* <Tilt options={{ max: 50 }}> */}
+        {/* <div> */}
           <img className="logo-img" src={logo} alt="Logo" />
-        </div>
-      </Tilt>
-    </div>
+        {/* </div> */}
+      {/* </Tilt> */}
+    {/* // </div> */}
+    </Fragment>
   );
 };
 

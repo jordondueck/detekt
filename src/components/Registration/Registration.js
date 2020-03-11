@@ -39,49 +39,65 @@ const Registration = ({ handleRouteChange }) => {
       {({ isSubmitting }) => (
         <Form className="form">
           <h2>Register</h2>
-          <FormGroup controlId="formFirstName">
+          <FormGroup controlId="firstName">
             {/* <FormLabel>First Name</FormLabel> */}
             <Field name="firstname">
-              {({ field, form, meta }) => (
-                <FormControl {...field} type="text" placeholder="First name" />
-              )}
-            </Field>
-            <ErrorMessage name="firstname" component="div" />
-          </FormGroup>
-          <FormGroup controlId="formLastName">
-            {/* <FormLabel>Last Name</FormLabel> */}
-            <Field name="lastname">
-              {({ field, form, meta }) => (
-                <FormControl {...field} type="text" placeholder="Last name" />
-              )}
-            </Field>
-            <ErrorMessage name="lastname" component="div" />
-          </FormGroup>
-          <FormGroup controlId="formEmail">
-            {/* <FormLabel>Email</FormLabel> */}
-            <Field name="email">
-              {({ field, form, meta }) => (
+              {({ field, meta }) => (
                 <FormControl
                   {...field}
+                  {...meta}
+                  className={meta.error && meta.touched ? "input--error" : ""}
+                  type="text"
+                  placeholder="First name"
+                />
+              )}
+            </Field>
+            <ErrorMessage className="error" name="firstname" component="div" />
+          </FormGroup>
+          <FormGroup controlId="lastName">
+            {/* <FormLabel>Last Name</FormLabel> */}
+            <Field name="lastname">
+              {({ field, meta }) => (
+                <FormControl
+                  {...field}
+                  {...meta}
+                  className={meta.error && meta.touched ? "input--error" : ""}
+                  type="text"
+                  placeholder="Last name"
+                />
+              )}
+            </Field>
+            <ErrorMessage className="error" name="lastname" component="div" />
+          </FormGroup>
+          <FormGroup controlId="email">
+            {/* <FormLabel>Email</FormLabel> */}
+            <Field name="email">
+              {({ field, meta }) => (
+                <FormControl
+                  {...field}
+                  {...meta}
+                  className={meta.error && meta.touched ? "input--error" : ""}
                   type="email"
                   placeholder="Email address"
                 />
               )}
             </Field>
-            <ErrorMessage name="email" component="div" />
+            <ErrorMessage className="error" name="email" component="div" />
           </FormGroup>
-          <FormGroup controlId="formPassword">
+          <FormGroup controlId="password">
             {/* <FormLabel>Password</FormLabel> */}
             <Field name="password">
-              {({ field, form, meta }) => (
+              {({ field, meta }) => (
                 <FormControl
                   {...field}
+                  {...meta}
+                  className={meta.error && meta.touched ? "input--error" : ""}
                   type="password"
                   placeholder="Password"
                 />
               )}
             </Field>
-            <ErrorMessage name="password" component="div" />
+            <ErrorMessage className="error" name="password" component="div" />
           </FormGroup>
           <Button variant="outline-dark" type="submit" disabled={isSubmitting}>
             Register

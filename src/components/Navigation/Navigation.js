@@ -17,26 +17,26 @@ const Navigation = ({ route, isSignedIn, handleRouteChange }) => {
         </li>
       </ul>
       {route === "signin" ? (
-        <p
-          className="nav-section nav-item"
-          onClick={() => handleRouteChange("registration")}
-        >
-          Register
-        </p>
+        <div className="nav-section">
+          <p
+            className="nav-item"
+            onClick={() => handleRouteChange("registration")}
+          >
+            Register
+          </p>
+        </div>
       ) : route === "registration" ? (
-        <p
-          className="nav-section nav-item"
-          onClick={() => handleRouteChange("signin")}
-        >
-          Sign In
-        </p>
+        <div className="nav-section">
+          <p className="nav-item" onClick={() => handleRouteChange("signin")}>
+            Sign In
+          </p>
+        </div>
       ) : isSignedIn ? (
-        <p
-          className="nav-section nav-item"
-          onClick={() => handleRouteChange("signin")}
-        >
-          Sign Out
-        </p>
+        <div className="nav-section">
+          <p className="nav-item" onClick={() => handleRouteChange("signin")}>
+            Sign Out
+          </p>
+        </div>
       ) : (
         undefined
       )}

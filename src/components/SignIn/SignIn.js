@@ -36,7 +36,7 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
     >
       {({ isSubmitting }) => (
         <Form className="form">
-          <h2>Sign In</h2>
+          <h2 className="form__title">Sign In</h2>
           <FormGroup controlId="email">
             {/* <FormLabel>Email</FormLabel> */}
             <Field name="email">
@@ -45,7 +45,6 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
                   {...field}
                   {...meta}
                   className={meta.error && meta.touched ? "input--error" : ""}
-                  name="email"
                   type="email"
                   placeholder="Email address"
                 />
@@ -61,7 +60,6 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
                   {...field}
                   {...meta}
                   className={meta.error && meta.touched ? "input--error" : ""}
-                  name="password"
                   type="password"
                   placeholder="Password"
                 />

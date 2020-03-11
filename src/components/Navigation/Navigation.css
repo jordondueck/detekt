@@ -28,7 +28,7 @@ ul {
 }
 
 .nav-item:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
   cursor: pointer;
   color: #5a5a5a;
 }
