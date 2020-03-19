@@ -7,7 +7,6 @@ import {
   FormGroup
   // FormLabel
 } from "react-bootstrap";
-import "./SignIn.css";
 
 const SignIn = ({ handleRouteChange, handleSignIn }) => {
   return (
