@@ -4,7 +4,7 @@ import "./ImageLinkForm.css";
 const ImageLinkForm = ({ handleInputChange, handleButtonSubmit }) => {
   return (
     <div className="form-container">
-      <p className="form-title">{"Enter Image URL"}</p>
+      <h3 className="title title--small">{"Enter Image URL"}</h3>
       <div className="form-content">
         <input
           className="form-input"
@@ -16,7 +16,7 @@ const ImageLinkForm = ({ handleInputChange, handleButtonSubmit }) => {
           {"Detect"}
         </button>
       </div>
-      <p className="form-tip">Note: Large images take longer to process.</p>
+      <p className="text__tip text--small">Note: Large images take longer to process.</p>
     </div>
   );
 };

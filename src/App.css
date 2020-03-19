@@ -10,6 +10,7 @@
   align-items: center;
   -ms-flex-align: center;
   justify-content: center;
+  font-size: 0.85rem;
 }
 
 .form {
@@ -17,9 +18,32 @@
   width: 50%;
 }
 
-/* .form__title {
+.title {
+  margin: 0;
+  padding: 0.5rem;
+  font-weight: bold;
+}
 
-} */
+.title--big {
+  font-size: 1.75rem;
+}
+
+.title--medium {
+  font-size: 1.5rem;
+}
+
+.title--small {
+  font-size: 1.25rem;
+}
+
+.text--small {
+  font-size: 0.75rem;
+}
+
+.text__tip {
+  padding: 0.5rem;
+  font-style: italic;
+}
 
 input:invalid {
   box-shadow: none;
@@ -32,39 +56,6 @@ input:invalid {
 .error {
   font-size: 0.75rem;
   color: #EB0000;
-}
-
-
-
-/* Headers */
-h1,
-h2,
-h3,
-h4,
-h5 {
-  margin: 0;
-  padding: 0.5rem;
-  font-weight: bold;
-}
-
-h1 {
-  font-size: 1.75rem;
-}
-
-h2 {
-  font-size: 1.5rem;
-}
-
-h3 {
-  font-size: 1.25rem;
-}
-
-h4 {
-  font-size: 1rem;
-}
-
-h5 {
-  font-size: 0.75rem;
 }
 
 p {
@@ -89,12 +80,24 @@ p {
   -moz-appearance: none;
 }
 
-/* react-particles-js */
-.particles {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
+@media all and (max-width: 640px) {
+  .form-input, .form-button {
+    font-size: 0.8rem
+  }
+
+  .title--big {
+    font-size: 1.5rem;
+  }
+  
+  .title--medium {
+    font-size: 1.25rem;
+  }
+  
+  .title--small {
+    font-size: 1rem;
+  }
+  
+  .text--small {
+    font-size: 0.75rem;
+  }
 }

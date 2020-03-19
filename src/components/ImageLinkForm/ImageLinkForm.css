@@ -5,12 +5,6 @@
   padding: 1rem 0;
 }
 
-.form-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  padding: 0.75rem;
-}
-
 .form-content {
   border: 1px solid;
   border-color: lightblue;
@@ -27,27 +21,4 @@
   border-radius: 0.25rem;
   width: 60%;
   max-width: 400px;
-}
-
-/* .form-button {
-  border: 1px solid;
-  border-color: lightblue;
-  border-radius: 0.25rem;
-  padding: 0.5rem 1rem;
-  margin: 0 0.25rem;
-  text-decoration: none;
-  background: #0069ed;
-  color: #ffffff;
-  font-family: sans-serif;
-  font-size: 1rem;
-  cursor: pointer;
-  text-align: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-} */
-
-.form-tip {
-  padding: 0.5rem;
-  font-style: italic;
-  font-size: 0.75rem;
 }

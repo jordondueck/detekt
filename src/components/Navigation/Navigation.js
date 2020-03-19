@@ -10,10 +10,10 @@ const Navigation = ({ route, isSignedIn, handleRouteChange }) => {
       </div>
       <ul className="nav-section nav-title">
         <li>
-          <h1>detekt</h1>
+          <h1 className="title title--big">detekt</h1>
         </li>
         <li>
-          <h3>Facial Recognition System</h3>
+          <h3 className="title title--small">Facial Recognition System</h3>
         </li>
       </ul>
       {route === "signin" ? (

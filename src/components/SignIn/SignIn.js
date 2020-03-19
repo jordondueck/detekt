@@ -35,7 +35,7 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
     >
       {({ isSubmitting }) => (
         <Form className="form">
-          <h2 className="form__title">Sign In</h2>
+          <h2 className="title title--medium">Sign In</h2>
           <FormGroup controlId="email">
             {/* <FormLabel>Email</FormLabel> */}
             <Field name="email">
