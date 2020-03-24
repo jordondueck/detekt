@@ -130,8 +130,8 @@ function App() {
         <Registration handleRouteChange={handleRouteChange} />
         </section>
       ) : (
-        <section>
-          <Statistics />
+        <section className="container">
+          {/* <Statistics /> */}
           <ImageLinkForm
             handleInputChange={handleInputChange}
             handleButtonSubmit={handleButtonSubmit}

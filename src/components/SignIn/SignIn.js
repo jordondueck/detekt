@@ -34,9 +34,9 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
       }}
     >
       {({ isSubmitting }) => (
-        <Form className="form">
+        <Form className="form form--narrow">
           <h2 className="title title--medium">Sign In</h2>
-          <FormGroup controlId="email">
+          <FormGroup className="form-group--wide" controlId="email">
             {/* <FormLabel>Email</FormLabel> */}
             <Field name="email">
               {({ field, meta }) => (
@@ -51,7 +51,7 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
             </Field>
             <ErrorMessage className="error" name="email" component="div" />
           </FormGroup>
-          <FormGroup controlId="password">
+          <FormGroup className="form-group--wide" controlId="password">
             {/* <FormLabel>Password</FormLabel> */}
             <Field name="password">
               {({ field, meta }) => (
