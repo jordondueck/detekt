@@ -1,4 +1,6 @@
 .App {
+  display: grid;
+  grid-template-rows: 1fr 6fr;
   text-align: center;
   height: 100vh;
 }
@@ -10,8 +12,12 @@
   flex-direction: column;
   align-items: center;
   -ms-flex-align: center;
-  /* justify-content: center; */
+  justify-content: center;
   font-size: 0.85rem;
+}
+
+.container--top {
+  justify-content: start;
 }
 
 /* Headings and Text */
