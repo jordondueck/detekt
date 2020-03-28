@@ -1,12 +1,5 @@
 import React from "react";
-import "./Navigation.css";
 import Logo from "../Logo/Logo";
-import {
-  Button,
-  FormControl,
-  FormGroup
-  // FormLabel
-} from "react-bootstrap";
 
 const Navigation = ({ route, isSignedIn, handleRouteChange }) => {
   return (
@@ -18,7 +11,7 @@ const Navigation = ({ route, isSignedIn, handleRouteChange }) => {
         {route === "signin" ? (
           <li>
             <button
-              className="nav-item button--text"
+              className="button--text"
               onClick={() => handleRouteChange("registration")}
             >
               Register
@@ -27,7 +20,7 @@ const Navigation = ({ route, isSignedIn, handleRouteChange }) => {
         ) : route === "registration" ? (
           <li>
             <button
-              className="nav-item button--text"
+              className="button--text"
               onClick={() => handleRouteChange("signin")}
             >
               Sign In
@@ -36,7 +29,7 @@ const Navigation = ({ route, isSignedIn, handleRouteChange }) => {
         ) : isSignedIn ? (
           <li>
             <button
-              className="nav-item button--text"
+              className="button--text"
               onClick={() => handleRouteChange("signin")}
             >
               Sign Out

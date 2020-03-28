@@ -20,6 +20,12 @@
   justify-content: start;
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 /* Headings and Text */
 .title {
   margin: 0;
@@ -51,6 +57,14 @@
 p {
   margin: 0;
   padding: 0;
+}
+
+/* Navigation Bar */
+.nav-list {
+  display: flex;
+  padding: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* Forms */
@@ -126,9 +140,9 @@ input:invalid {
   color: #5a5a5a;
 }
 
-/* .button--text:focus {
-  box-shadow: none;
-} */
+.button--text:focus {
+  outline: none;
+}
 
 /* High specificity required to modify Bootstrap button style */
 /* .button--text:not(:disabled):not(.disabled):active {
