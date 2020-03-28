@@ -6,7 +6,6 @@
 }
 
 .container {
-  /* height: 70%; */
   display: flex;
   display: -ms-flexbox;
   flex-direction: column;
@@ -87,13 +86,8 @@ p {
   width: 80%;
 }
 
-.form--top {
-  /* align-self: start;
-  padding: 3rem 0; */
-}
-
-/* .form__content {
-  border: 1px solid lightblue;
+.form__content {
+  border: 1px solid #ddd;
   border-radius: 0.25rem;
   box-shadow: 0.25rem 0.25rem 0.25rem darkslategrey;
   padding: 0.5rem;
@@ -102,7 +96,7 @@ p {
   display: -ms-flexbox;
   justify-content: center;
   align-items: center;
-} */
+}
 
 .form-group--wide {
   width: 90%;
@@ -110,6 +104,10 @@ p {
 
 .form-group--inline {
   display: flex;
+}
+
+.form-group--no-msg {
+  margin: 0;
 }
 
 .input--error {
@@ -145,6 +143,11 @@ input:invalid {
 }
 
 /* High specificity required to modify Bootstrap button style */
+/* Remove outline from Bootstrap button */
+.button--no-outline:focus, .button--no-outline:not(:disabled):not(.disabled):active:focus {
+  box-shadow: none;
+}
+
 /* .button--text:not(:disabled):not(.disabled):active {
   color: black;
   background-color: transparent;
