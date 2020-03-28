@@ -5,32 +5,8 @@
   justify-content: space-between;
 }
 
-.nav-section {
-  /* flex: 1; */
-  /* display: flex;
-  justify-content: center; */
-}
-
-.nav-section:first-child {
-  justify-content: flex-start;
-}
-
-.nav-section:last-child {
-  justify-content: flex-end;
-}
-
-.nav-title {
-  flex-direction: column;
-}
-
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.nav-item:hover {
-  /* text-decoration: underline; */
-  cursor: pointer;
-  color: #5a5a5a;
 }

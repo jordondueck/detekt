@@ -123,6 +123,7 @@ input:invalid {
 
 .button--text:hover {
   text-decoration: underline;
+  color: #5a5a5a;
 }
 
 /* .button--text:focus {
