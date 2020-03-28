@@ -20,13 +20,13 @@ const Navigation = ({ route, isSignedIn, handleRouteChange }) => {
         </li> */}
         {route === "signin" ? (
         <li className="nav-section">
-          <Button
-            className="nav-item"
-            variant="outline-dark"
+          <button
+            className="nav-item button--text"
+            // variant="outline-dark"
             onClick={() => handleRouteChange("registration")}
           >
             Register
-          </Button>
+          </button>
         </li>
       ) : route === "registration" ? (
         <div className="nav-section">

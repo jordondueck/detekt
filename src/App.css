@@ -116,6 +116,29 @@ input:invalid {
   margin: auto auto auto 0.25rem;
 }
 
+.button--text {
+  border: none;
+  background-color: transparent;
+}
+
+.button--text:hover {
+  text-decoration: underline;
+}
+
+/* .button--text:focus {
+  box-shadow: none;
+} */
+
+/* High specificity required to modify Bootstrap button style */
+/* .button--text:not(:disabled):not(.disabled):active {
+  color: black;
+  background-color: transparent;
+}
+
+.button--text:not(:disabled):not(.disabled):active:focus {
+  box-shadow: none;
+} */
+
 /* Media Queries */
 @media all and (max-width: 640px) {
   .form-input, .form-button {
