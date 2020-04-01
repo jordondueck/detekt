@@ -66,6 +66,11 @@ p {
   justify-content: space-between;
 }
 
+.logo-img {
+  height: 120px;
+  width: 120px;
+}
+
 /* Forms */
 .form {
   display: flex;
