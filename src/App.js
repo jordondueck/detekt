@@ -4,7 +4,7 @@ import "./App.css";
 import Navigation from "./components/Navigation/Navigation";
 import SignIn from "./components/SignIn/SignIn";
 import Registration from "./components/Registration/Registration";
-import Statistics from "./components/Statistics/Statistics";
+// import Statistics from "./components/Statistics/Statistics";
 import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
 import FacialRecognitionSystem from "./components/FacialRecognitionSystem/FacialRecognitionSystem";
 
