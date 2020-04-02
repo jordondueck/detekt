@@ -1,34 +1,11 @@
 import React, { useState } from "react";
-import "./App.css";
-// import Particles from "react-particles-js";
 import Navigation from "./components/Navigation/Navigation";
 import SignIn from "./components/SignIn/SignIn";
 import Registration from "./components/Registration/Registration";
 // import Statistics from "./components/Statistics/Statistics";
 import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
 import FacialRecognitionSystem from "./components/FacialRecognitionSystem/FacialRecognitionSystem";
-
-// const particlesOptions = {
-//   particles: {
-//     number: {
-//       value: 45,
-//       // density: {
-//       //   enable: true,
-//       //   value_area: 800
-//       // }
-//     },
-//     size: {
-//       value: 3
-//     },
-//     line_linked: {
-//       shadow: {
-//         enable: true,
-//         color: "#3CA9D1",
-//         blur: 1
-//       }
-//     }
-//   }
-// };
+import "./App.css";
 
 function App() {
   const [route, setRoute] = useState("signin");
@@ -112,7 +89,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Particles className="particles" params={particlesOptions} /> */}
       <Navigation
         route={route}
         handleRouteChange={handleRouteChange}

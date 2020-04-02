@@ -1,11 +1,7 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { SignInSchema } from "../ValidateForm/ValidateForm";
-import {
-  Button,
-  FormControl,
-  FormGroup
-} from "react-bootstrap";
+import { Button, FormControl, FormGroup } from "react-bootstrap";
 
 const SignIn = ({ handleRouteChange, handleSignIn }) => {
   return (
