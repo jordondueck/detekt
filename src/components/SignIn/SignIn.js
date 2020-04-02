@@ -2,6 +2,7 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { SignInSchema } from "../ValidateForm/ValidateForm";
 import { Button, FormControl, FormGroup } from "react-bootstrap";
+import logo from "../Logo/logo-noname.png";
 
 const SignIn = ({ handleRouteChange, handleSignIn }) => {
   return (
@@ -29,7 +30,8 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
       }}
     >
       {({ isSubmitting }) => (
-        <Form className="form form--border form--narrow">
+        <Form className="form form--border">
+          <img className="logo__image" src={logo} alt="detekt logo" />
           <h2 className="title title--medium">Sign In</h2>
           <FormGroup className="form-group--wide" controlId="email">
             <Field name="email">

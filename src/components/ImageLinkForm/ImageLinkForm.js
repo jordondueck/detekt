@@ -4,7 +4,7 @@ import { Button, FormControl, FormGroup } from "react-bootstrap";
 
 const ImageLinkForm = ({ handleInputChange, handleButtonSubmit }) => {
   return (
-    <form className="form form--wide">
+    <form className="form">
       <div className="form__content">
       <h2>{"Facial Recognition System"}</h2>
         <FormGroup
