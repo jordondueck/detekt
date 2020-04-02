@@ -27,7 +27,9 @@ ul {
 }
 
 /* Headings and Text */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0.5rem;
   font-weight: bold;
 }
@@ -81,6 +83,8 @@ p {
   align-items: center;
   margin: 0 auto;
   padding: 1.5rem;
+  width: 350px;
+  max-width: 350px;
 }
 
 .form--border {
@@ -147,6 +151,8 @@ input:invalid {
 .button--text {
   border: none;
   background-color: transparent;
+  transition: color 0.5s ease-out;
+  font-weight: 600;
 }
 
 .button--text:hover {
@@ -195,7 +201,11 @@ input:invalid {
   }
 }
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 450px) {
+  .form__content {
+    min-width: 350px;
+  }
+
   .form-control,
   .form-input,
   .btn {
