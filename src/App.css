@@ -3,7 +3,7 @@
   grid-template-rows: minmax(3rem, 1fr) 11fr;
   height: 100vh;
   text-align: center;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   color: #262626;
 }
 
@@ -65,11 +65,11 @@ p {
   align-items: center;
   justify-content: space-between;
   background-color: #ffffff;
-  border-bottom: 1px solid #EFEFEF;
+  border-bottom: 1px solid #efefef;
 }
 
 .logo-img {
-  height: 2.5rem;
+  height: 2.25rem;
   width: 6rem;
 }
 
@@ -79,7 +79,13 @@ p {
   display: -ms-flexbox;
   flex-direction: column;
   align-items: center;
-  margin: 1rem auto;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.form--border {
+  background-color: white;
+  border: 1px solid #efefef;
 }
 
 /* .form--narrow {
@@ -103,6 +109,7 @@ p {
   display: -ms-flexbox;
   justify-content: center;
   align-items: center;
+  background-color: white;
 }
 
 .form-group--wide {
@@ -118,7 +125,7 @@ p {
 }
 
 .input--error {
-  border: 1px solid #EB0000;
+  border: 1px solid #eb0000;
 }
 
 input:invalid {
@@ -127,7 +134,7 @@ input:invalid {
 
 .error {
   font-size: 0.75rem;
-  color: #EB0000;
+  color: #eb0000;
 }
 
 /* Buttons */
@@ -151,7 +158,8 @@ input:invalid {
 
 /* High specificity required to modify Bootstrap button style */
 /* Remove outline from Bootstrap button */
-.button--no-outline:focus, .button--no-outline:not(:disabled):not(.disabled):active:focus {
+.button--no-outline:focus,
+.button--no-outline:not(:disabled):not(.disabled):active:focus {
   box-shadow: none;
 }
 
@@ -166,24 +174,25 @@ input:invalid {
 
 /* Media Queries */
 @media all and (max-width: 640px) {
-  .form-input, .form-button {
-    font-size: 0.8rem
+  .form-input,
+  .form-button {
+    font-size: 0.8rem;
   }
 
   /* Titles */
   .title--big {
     font-size: 1.5rem;
   }
-  
+
   .title--medium {
     font-size: 1.25rem;
   }
-  
+
   .title--small {
     font-size: 1rem;
   }
-  
-  /* Regular Text */
+
+  /* Text */
   .text--small {
     font-size: 0.75rem;
   }
