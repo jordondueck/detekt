@@ -1,8 +1,10 @@
 .App {
   display: grid;
-  grid-template-rows: 1fr 6fr;
-  text-align: center;
+  grid-template-rows: minmax(3rem, 1fr) 11fr;
   height: 100vh;
+  text-align: center;
+  background-color: #FAFAFA;
+  color: #262626;
 }
 
 .container {
@@ -12,7 +14,6 @@
   align-items: center;
   -ms-flex-align: center;
   justify-content: center;
-  font-size: 0.85rem;
 }
 
 .container--top {
@@ -27,8 +28,7 @@ ul {
 
 /* Headings and Text */
 .title {
-  margin: 0;
-  padding: 0.5rem;
+  margin: 0.5rem;
   font-weight: bold;
 }
 
@@ -64,11 +64,13 @@ p {
   padding: 1rem 2rem;
   align-items: center;
   justify-content: space-between;
+  background-color: #ffffff;
+  border-bottom: 1px solid #EFEFEF;
 }
 
 .logo-img {
-  height: 120px;
-  width: 120px;
+  height: 2.5rem;
+  width: 6rem;
 }
 
 /* Forms */
@@ -77,19 +79,18 @@ p {
   display: -ms-flexbox;
   flex-direction: column;
   align-items: center;
-  padding: 1rem 0;
-  /* background: #eee; */
+  margin: 1rem auto;
 }
 
-.form--narrow {
+/* .form--narrow {
   max-width: 30rem;
   width: 50%;
-}
+} */
 
-.form--wide {
+/* .form--wide {
   max-width: 35rem;
   width: 80%;
-}
+} */
 
 .form__content {
   border: 1px solid #ddd;
@@ -97,6 +98,7 @@ p {
   box-shadow: 0.25rem 0.25rem 0.25rem darkslategrey;
   padding: 0.5rem;
   width: 50vw;
+  min-width: 400px;
   display: flex;
   display: -ms-flexbox;
   justify-content: center;
@@ -139,7 +141,7 @@ input:invalid {
 }
 
 .button--text:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
   color: #5a5a5a;
 }
 
