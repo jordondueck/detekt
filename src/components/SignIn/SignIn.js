@@ -5,7 +5,6 @@ import {
   Button,
   FormControl,
   FormGroup
-  // FormLabel
 } from "react-bootstrap";
 
 const SignIn = ({ handleRouteChange, handleSignIn }) => {
@@ -37,7 +36,6 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
         <Form className="form form--border form--narrow">
           <h2 className="title title--medium">Sign In</h2>
           <FormGroup className="form-group--wide" controlId="email">
-            {/* <FormLabel>Email</FormLabel> */}
             <Field name="email">
               {({ field, meta }) => (
                 <FormControl
@@ -52,7 +50,6 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
             <ErrorMessage className="error" name="email" component="div" />
           </FormGroup>
           <FormGroup className="form-group--wide" controlId="password">
-            {/* <FormLabel>Password</FormLabel> */}
             <Field name="password">
               {({ field, meta }) => (
                 <FormControl

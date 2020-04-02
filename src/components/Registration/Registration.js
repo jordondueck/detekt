@@ -5,7 +5,6 @@ import {
   Button,
   FormControl,
   FormGroup
-  // FormLabel
 } from "react-bootstrap";
 
 const Registration = ({ handleRouteChange }) => {
