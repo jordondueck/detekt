@@ -39,7 +39,6 @@ const Registration = ({ handleRouteChange }) => {
         <Form className="form form--border form--narrow">
           <h2 className="title title--medium">Register</h2>
           <FormGroup className="form-group--wide" controlId="firstName">
-            {/* <FormLabel>First Name</FormLabel> */}
             <Field name="firstname">
               {({ field, meta }) => (
                 <FormControl
@@ -54,7 +53,6 @@ const Registration = ({ handleRouteChange }) => {
             <ErrorMessage className="error" name="firstname" component="div" />
           </FormGroup>
           <FormGroup className="form-group--wide" controlId="lastName">
-            {/* <FormLabel>Last Name</FormLabel> */}
             <Field name="lastname">
               {({ field, meta }) => (
                 <FormControl
@@ -69,7 +67,6 @@ const Registration = ({ handleRouteChange }) => {
             <ErrorMessage className="error" name="lastname" component="div" />
           </FormGroup>
           <FormGroup className="form-group--wide" controlId="email">
-            {/* <FormLabel>Email</FormLabel> */}
             <Field name="email">
               {({ field, meta }) => (
                 <FormControl
@@ -84,7 +81,6 @@ const Registration = ({ handleRouteChange }) => {
             <ErrorMessage className="error" name="email" component="div" />
           </FormGroup>
           <FormGroup className="form-group--wide" controlId="password">
-            {/* <FormLabel>Password</FormLabel> */}
             <Field name="password">
               {({ field, meta }) => (
                 <FormControl

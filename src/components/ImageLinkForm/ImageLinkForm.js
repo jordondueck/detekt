@@ -5,8 +5,8 @@ import { Button, FormControl, FormGroup } from "react-bootstrap";
 const ImageLinkForm = ({ handleInputChange, handleButtonSubmit }) => {
   return (
     <form className="form form--wide">
-      <h3 className="title title--small">{"Enter Image URL"}</h3>
-      <section className="form__content">
+      <div className="form__content">
+      <h2>{"Facial Recognition System"}</h2>
         <FormGroup
           className="form-group--wide form-group--inline form-group--no-msg"
           controlId="imageurl"
@@ -24,7 +24,7 @@ const ImageLinkForm = ({ handleInputChange, handleButtonSubmit }) => {
             {"Detect"}
           </Button>
         </FormGroup>
-      </section>
+      </div>
     </form>
   );
 };
