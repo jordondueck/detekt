@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
-import logo from "./logo_text.png";
+import logo from "./logo-noname.png";
 
 const Logo = () => {
   return (
     <Fragment>
-      <img className="logo__text" src={logo} alt="detekt logo" />
+      <img className="logo__image" src={logo} alt="detekt logo" />
     </Fragment>
   );
 };

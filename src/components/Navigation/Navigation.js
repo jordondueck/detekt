@@ -1,12 +1,12 @@
 import React from "react";
-import Logo from "../Logo/Logo";
+import logo from "../Logo/logo_text.png";
 
 const Navigation = ({ route, isSignedIn, handleRouteChange }) => {
   return (
     <nav>
       <ul className="nav-list">
         <li>
-          <Logo />
+          <img className="logo__text" src={logo} alt="detekt logo" />
         </li>
         {route === "signin" ? (
           <li>

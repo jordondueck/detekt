@@ -2,6 +2,7 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { RegisterSchema } from "../ValidateForm/ValidateForm";
 import { Button, FormControl, FormGroup } from "react-bootstrap";
+import Logo from "../Logo/Logo";
 
 const Registration = ({ handleRouteChange }) => {
   return (
@@ -32,6 +33,7 @@ const Registration = ({ handleRouteChange }) => {
     >
       {({ isSubmitting }) => (
         <Form className="form form--border">
+          <Logo />
           <h2 className="title title--medium">Register</h2>
           <FormGroup className="form-group--wide" controlId="firstName">
             <Field name="firstname">
