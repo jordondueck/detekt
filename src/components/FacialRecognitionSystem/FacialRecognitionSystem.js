@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./FacialRecognitionSystem.css";
 import BoundingBox from "../BoundingBox/BoundingBox";
+import placeholder from "./detect-face.svg";
 
 const FacialRecognitionSystem = ({ imageUrl, boxAreas }) => {
   const [imageStatus, setImageStatus] = useState("Loading...");
@@ -14,7 +15,7 @@ const FacialRecognitionSystem = ({ imageUrl, boxAreas }) => {
       <div className="frs--container">
         <div className="frs--container-inner">
           <img
-            className="frs--image"
+            className="frs__image"
             id="inputImage"
             onLoad={handleImageLoaded}
             src={imageUrl}
@@ -26,7 +27,19 @@ const FacialRecognitionSystem = ({ imageUrl, boxAreas }) => {
       </div>
     );
   } else {
-    return <div className="frs--container"></div>;
+    return (
+      <div className="frs--container">
+        <div className="frs--container-inner">
+          <img
+            className="frs__image frs--no-border"
+            id="inputImage"
+            onLoad={handleImageLoaded}
+            src={placeholder}
+            alt=""
+          />
+        </div>
+      </div>
+    );
   }
 };
 

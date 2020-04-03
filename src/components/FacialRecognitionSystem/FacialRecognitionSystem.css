@@ -10,9 +10,15 @@
   position: absolute;
 }
 
-.frs--image {
-  width: 600vw;
-  max-width: 600px;
+.frs__image {
+  width: 50vw;
+  max-width: 800px;
+  min-width: 350px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.24);
+}
+
+.frs--no-border {
+  box-shadow: none;
 }
 
 .frs--bounding-box {

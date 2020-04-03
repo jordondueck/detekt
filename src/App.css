@@ -72,7 +72,7 @@ p {
 }
 
 .logo__text {
-  height: 2.25rem;
+  /* height: 2.25rem; */
   width: 6rem;
 }
 
@@ -97,14 +97,15 @@ p {
 .form--border {
   background-color: #ffffff;
   border: 1px solid #efefef;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
 }
 
 .form__content {
   border: 1px solid #ddd;
   border-radius: 0.25rem;
-  box-shadow: 0.25rem 0.25rem 0.25rem darkslategrey;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
   padding: 1rem 0.5rem;
-  width: 35vw;
+  width: 50vw;
   min-width: 400px;
   max-width: 600px;
   display: flex;
