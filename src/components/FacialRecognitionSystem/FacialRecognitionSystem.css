@@ -1,12 +1,9 @@
 .frs--container {
   display: flex;
   justify-content: center;
-  /* display: block;
-  text-align: center; */
 }
 
 .frs--container-inner {
-  display: block;
   position: absolute;
 }
 
