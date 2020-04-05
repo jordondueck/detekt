@@ -38,7 +38,6 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
               {({ field, meta }) => (
                 <FormControl
                   {...field}
-                  {...meta}
                   className={meta.error && meta.touched ? "input--error" : ""}
                   type="email"
                   placeholder="Email address"
@@ -52,7 +51,6 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
               {({ field, meta }) => (
                 <FormControl
                   {...field}
-                  {...meta}
                   className={meta.error && meta.touched ? "input--error" : ""}
                   type="password"
                   placeholder="Password"

@@ -40,7 +40,6 @@ const Registration = ({ handleRouteChange }) => {
               {({ field, meta }) => (
                 <FormControl
                   {...field}
-                  {...meta}
                   className={meta.error && meta.touched ? "input--error" : ""}
                   type="text"
                   placeholder="First name"
@@ -54,7 +53,6 @@ const Registration = ({ handleRouteChange }) => {
               {({ field, meta }) => (
                 <FormControl
                   {...field}
-                  {...meta}
                   className={meta.error && meta.touched ? "input--error" : ""}
                   type="text"
                   placeholder="Last name"
@@ -68,7 +66,6 @@ const Registration = ({ handleRouteChange }) => {
               {({ field, meta }) => (
                 <FormControl
                   {...field}
-                  {...meta}
                   className={meta.error && meta.touched ? "input--error" : ""}
                   type="email"
                   placeholder="Email address"
@@ -82,7 +79,6 @@ const Registration = ({ handleRouteChange }) => {
               {({ field, meta }) => (
                 <FormControl
                   {...field}
-                  {...meta}
                   className={meta.error && meta.touched ? "input--error" : ""}
                   type="password"
                   placeholder="Password"
