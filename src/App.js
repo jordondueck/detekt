@@ -13,6 +13,7 @@ function App() {
   const [imageUrl, setImageUrl] = useState("");
   const [boxAreas, setBoxAreas] = useState([{}]);
   const [user, setUser] = useState([{}]);
+  const [detectSelected, setDetectSelected] = useState(false);
 
   fetch("https://salty-mesa-37106.herokuapp.com/", {
     method: "get",
@@ -24,6 +25,7 @@ function App() {
     setImageUrl("");
     setBoxAreas([{}]);
     setUser([{}]);
+    setDetectSelected(false);
   };
 
   const handleSignIn = requestingUser => {
@@ -38,17 +40,21 @@ function App() {
     setRoute(requestedRoute);
   };
 
-  const handleInputChange = event => {
-    setBoxAreas([{}]);
-    setImageUrl(event.target.value);
+  const handleButtonReset = () => {
+    setDetectSelected(false);
   };
 
-  const handleButtonSubmit = () => {
+  const handleInputChange = url => {
+    setBoxAreas([{}]);
+    setImageUrl(url);
+  };
+
+  const handleButtonSubmit = url => {
     fetch("https://salty-mesa-37106.herokuapp.com/clarifai", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        imageUrl: imageUrl
+        imageUrl: url
       })
     })
       .then(response => response.json())
@@ -62,6 +68,7 @@ function App() {
           })
         }).catch(console.log);
         displayFaceBoxes(calculateFaceLocations(response));
+        setDetectSelected(true);
       })
       .catch(err => console.log("Error loading image: ", err));
   };
@@ -111,6 +118,9 @@ function App() {
           <ImageLinkForm
             handleInputChange={handleInputChange}
             handleButtonSubmit={handleButtonSubmit}
+            inputUrl={imageUrl}
+            detectSelected={detectSelected}
+            handleButtonReset={handleButtonReset}
           />
           <FacialRecognitionSystem imageUrl={imageUrl} boxAreas={boxAreas} />
         </section>

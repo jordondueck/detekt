@@ -30,3 +30,8 @@ export const RegisterSchema = Yup.object().shape({
     // .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/, () => "Password must contain an upper and a lower case letter, a number, and a symbol")
     .required("Password required")
 });
+
+export const ImageUrlSchema = Yup.object().shape({
+  imageUrl: Yup.string()
+    .required("Image URL required"),
+});
