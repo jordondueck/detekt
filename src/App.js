@@ -103,14 +103,14 @@ function App() {
       />
       {route === "signin" ? (
         <section className="container">
-        <SignIn
-          handleRouteChange={handleRouteChange}
-          handleSignIn={handleSignIn}
-        />
+          <SignIn
+            handleRouteChange={handleRouteChange}
+            handleSignIn={handleSignIn}
+          />
         </section>
       ) : route === "registration" ? (
         <section className="container">
-        <Registration handleRouteChange={handleRouteChange} />
+          <Registration handleRouteChange={handleRouteChange} />
         </section>
       ) : (
         <section className="container container--top">

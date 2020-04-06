@@ -32,7 +32,7 @@ const Registration = ({ handleRouteChange }) => {
       }}
     >
       {({ isSubmitting }) => (
-        <Form className="form form--border">
+        <Form className="form form--narrow form--border">
           <Logo />
           <h2 className="title title--medium">Register</h2>
           <FormGroup className="form-group--wide" controlId="firstName">

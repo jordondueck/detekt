@@ -4,16 +4,21 @@ import { ImageUrlSchema } from "../ValidateForm/ValidateForm";
 import { Button, FormControl, FormGroup } from "react-bootstrap";
 import "./ImageLinkForm.css";
 
-const ImageLinkForm = ({ handleInputChange, handleButtonSubmit, inputUrl, detectSelected, handleButtonReset }) => {
-
+const ImageLinkForm = ({
+  handleInputChange,
+  handleButtonSubmit,
+  inputUrl,
+  detectSelected,
+  handleButtonReset
+}) => {
   return (
     <Formik
-    initialValues={{ imageUrl: "" }}
+      initialValues={{ imageUrl: "" }}
       validationSchema={ImageUrlSchema}
       onSubmit={(values, { setSubmitting, resetForm }) => {
-        inputUrl === "" ?
-        handleInputChange(values.imageUrl) :
-        handleButtonSubmit(values.imageUrl);
+        inputUrl === ""
+          ? handleInputChange(values.imageUrl)
+          : handleButtonSubmit(values.imageUrl);
       }}
       onReset={(values, { setSubmitting, resetForm }) => {
         handleInputChange(values.imageUrl);
@@ -21,52 +26,51 @@ const ImageLinkForm = ({ handleInputChange, handleButtonSubmit, inputUrl, detect
       }}
     >
       {({ isSubmitting }) => (
-<Form className="form">
-        <div className="form__content">
-          <h2>Facial Recognition System</h2>
-          <FormGroup
-            className="form-group--wide form-group--inline form-group--no-msg"
-            controlId="imageurl"
-          >
-            <Field name="imageUrl">
-              {({ field, meta }) => (
-                <FormControl
-                // name={field.name}
-                // onBlur={field.onBlur}
-                // value={field.value}
-                  {...field}
-                  // {...meta}
-                  className={meta.error && meta.touched ? "input--error" : ""}
-                  type="text"
-                  placeholder="https://example.com/images/example.jpg"
-                  // onChange={field.onChange}
-                />
+        <Form className="form form--wide">
+          <div className="form__content">
+            <h2>Facial Recognition System</h2>
+            <div className="form__inner">
+            <FormGroup
+              className="form-group--wide form-group--inline"
+              controlId="imageurl"
+            >
+              <Field name="imageUrl">
+                {({ field, meta }) => (
+                  <FormControl
+                    {...field}
+                    className={meta.error && meta.touched ? "input--error" : ""}
+                    type="text"
+                    placeholder="https://example.com/images/example.jpg"
+                  />
+                )}
+              </Field>
+              <div className="error__wrapper">
+              <ErrorMessage className="error" name="imageUrl" component="span" />
+              </div>
+              </FormGroup>
+              {detectSelected ? (
+                <Button
+                  className="button--ml button--no-outline"
+                  variant="outline-dark"
+                  type="reset"
+                >
+                  Clear
+                </Button>
+              ) : (
+                <Button
+                  className="button--ml button--no-outline"
+                  variant="outline-dark"
+                  type="submit"
+                >
+                  {inputUrl === "" ? "Load" : "Detect"}
+                </Button>
               )}
-            </Field>
-            <ErrorMessage className="error" name="imageUrl" component="div" />
-            {detectSelected
-            ?
-            <Button
-              className="button--ml button--no-outline"
-              variant="outline-dark"
-              type="reset"
-            >
-              Clear
-            </Button>
-            :
-            <Button
-              className="button--ml button--no-outline"
-              variant="outline-dark"
-              type="submit"
-            >
-              {inputUrl === "" ? "Load" : "Detect"}
-            </Button>}
-          </FormGroup>
-        </div>
-      </Form>
+              </div>
+            
+          </div>
+        </Form>
       )}
     </Formik>
-
 
     // <form className="form form--wide">
     //   <div className="form__content">

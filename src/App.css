@@ -90,8 +90,16 @@ p {
   align-items: center;
   margin: 0 auto;
   padding: 1.5rem;
+}
+
+.form--narrow {
   width: 350px;
-  max-width: 350px;
+}
+
+.form--wide {
+  width: 50vw;
+  min-width: 400px;
+  max-width: 600px;
 }
 
 .form--border {
@@ -104,16 +112,21 @@ p {
   border: 1px solid #ddd;
   border-radius: 0.25rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
-  padding: 1rem 0.5rem;
-  width: 50vw;
-  min-width: 400px;
-  max-width: 600px;
+  padding: 0.5rem 1rem;
   display: flex;
   flex-direction: column;
   display: -ms-flexbox;
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
+  width: 100%;
+}
+
+.form__inner {
+  display: flex;
+  /* align-items: flex-start; */
+  width: 100%;
+  height: auto;
 }
 
 .form-group--wide {
@@ -122,6 +135,7 @@ p {
 
 .form-group--inline {
   display: flex;
+  flex-direction: column;
 }
 
 .form-group--no-msg {
@@ -141,9 +155,13 @@ input:invalid {
   color: #eb0000;
 }
 
+.error__wrapper {
+  height: 1rem;
+}
+
 /* Buttons */
 .button--ml {
-  margin: auto auto auto 0.25rem;
+  margin: 0 auto auto 0.25rem;
 }
 
 .button--text {
