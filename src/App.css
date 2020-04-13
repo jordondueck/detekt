@@ -164,6 +164,10 @@ input:invalid {
   margin: 0 auto auto 0.25rem;
 }
 
+.button--mt {
+  margin-top: 0.5rem;
+}
+
 .button--text {
   border: none;
   background-color: transparent;
@@ -216,7 +220,7 @@ input:invalid {
   }
 }
 
-@media all and (max-width: 450px) {
+@media all and (max-width: 850px) {
   .form__content {
     min-width: 350px;
   }
@@ -244,4 +248,63 @@ input:invalid {
   .text--small {
     font-size: 0.5rem;
   }
+}
+
+.input_container--outer {
+  display: flex;
+  flex-direction: row;
+}
+.input_container {
+  display: flex;
+  position: relative;
+  /* padding: 0.5rem; */
+  margin: 0;
+  align-items: center;
+  background-color: transparent;
+}
+.input_container--grey {
+  background-color: #e9ecef;
+}
+/* .input_container--transparent {
+  background-color: transparent;
+} */
+.input_input {
+  /* height:20px; */
+  margin: 0;
+  /* padding-left:30px; */
+}
+.input_img {
+  /* position:absolute; */
+  /* bottom:8px;
+  left:10px;
+  width:10px;
+  height:10px; */
+  /* margin-left: 0.75rem; */
+}
+.form-control--clear {
+  height: 100%;
+  padding: 0 0 0 0;
+  /* font-size: 1rem; */
+  /* font-weight: 400; */
+  /* line-height: 1.5; */
+  /* color: #495057; */
+  background-color: transparent;
+  /* background-clip: padding-box; */
+  border: none;
+  /* border-radius: 0; */
+  transition: none;
+}
+
+.form-control:focus {
+  border-color: none;
+  outline: 0;
+  box-shadow: none;
+}
+
+.pr--75 {
+  margin: 0 0.75rem 0 0;
+}
+
+.button--undo {
+  cursor: pointer;
 }

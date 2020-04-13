@@ -8,11 +8,12 @@
 }
 
 .frs__image {
-  height: 60vh;
-  max-height: 800px;
-  min-height: 350px;
-  max-width: 350px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.24);
+  /* height: 60vh; */
+  width: 60%;
+  max-width: 650px;
+  min-width: 350px;
+  max-height: 65vh;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.24); */
 }
 
 .frs--no-border {
