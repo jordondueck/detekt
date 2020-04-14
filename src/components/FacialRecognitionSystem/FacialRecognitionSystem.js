@@ -22,7 +22,9 @@ const FacialRecognitionSystem = ({ imageUrl, boxAreas }) => {
             alt=""
           />
           <BoundingBox boxAreas={boxAreas} />
-          <p style={{ textAlign: "center" }}>{imageStatus}</p>
+          {imageStatus !== "" ? (
+            <p style={{ textAlign: "center" }}>{imageStatus}</p>
+          ) : undefined}
         </div>
       </div>
     );
@@ -33,7 +35,7 @@ const FacialRecognitionSystem = ({ imageUrl, boxAreas }) => {
           <img
             className="frs__image frs--no-border"
             id="inputImage"
-            onLoad={handleImageLoaded}
+            // onLoad={handleImageLoaded}
             src={placeholder}
             alt=""
           />

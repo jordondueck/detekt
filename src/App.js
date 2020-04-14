@@ -13,10 +13,11 @@ function App() {
   const [imageUrl, setImageUrl] = useState("");
   const [boxAreas, setBoxAreas] = useState([{}]);
   const [user, setUser] = useState([{}]);
+  const [detectSelected, setDetectSelected] = useState(false);
 
   fetch("https://salty-mesa-37106.herokuapp.com/", {
     method: "get",
-    headers: { "Content-Type": "application/json" }
+    headers: { "Content-Type": "application/json" },
   }).catch(console.log);
 
   const setDefaultState = () => {
@@ -24,66 +25,74 @@ function App() {
     setImageUrl("");
     setBoxAreas([{}]);
     setUser([{}]);
+    setDetectSelected(false);
   };
 
-  const handleSignIn = requestingUser => {
+  const handleSignIn = (requestingUser) => {
     setUser(requestingUser);
     setIsSignedIn(true);
   };
 
-  const handleRouteChange = requestedRoute => {
+  const handleRouteChange = (requestedRoute) => {
     if (requestedRoute !== "home") {
       setDefaultState();
     }
     setRoute(requestedRoute);
   };
 
-  const handleInputChange = event => {
-    setBoxAreas([{}]);
-    setImageUrl(event.target.value);
+  const handleButtonReset = () => {
+    setDetectSelected(false);
   };
 
-  const handleButtonSubmit = () => {
+  const handleInputChange = (url) => {
+    setBoxAreas([{}]);
+    setImageUrl(url);
+  };
+
+  const handleButtonSubmit = (url) => {
+    // Submit image URL to Clarifai API
     fetch("https://salty-mesa-37106.herokuapp.com/clarifai", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        imageUrl: imageUrl
-      })
+        imageUrl: url,
+      }),
     })
-      .then(response => response.json())
-      .then(response => {
+      .then((response) => response.json())
+      .then((response) => {
+        // Update database with items detected
         fetch("https://salty-mesa-37106.herokuapp.com/image", {
           method: "post",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             itemsdetected: response.outputs[0].data.regions.length,
-            accountid: user.accountid
-          })
+            accountid: user.accountid,
+          }),
         }).catch(console.log);
         displayFaceBoxes(calculateFaceLocations(response));
+        setDetectSelected(true);
       })
-      .catch(err => console.log("Error loading image: ", err));
+      .catch((err) => console.log("Error loading image: ", err));
   };
 
-  const calculateFaceLocations = data => {
-    const clarifaiFaces = data.outputs[0].data.regions.map(faceRegion => {
+  const calculateFaceLocations = (data) => {
+    const clarifaiFaces = data.outputs[0].data.regions.map((faceRegion) => {
       return faceRegion.region_info.bounding_box;
     });
     const image = document.getElementById("inputImage");
     const width = Number(image.width);
     const height = Number(image.height);
-    return clarifaiFaces.map(clarifaiFace => {
+    return clarifaiFaces.map((clarifaiFace) => {
       return {
         topRow: clarifaiFace.top_row * height,
         leftCol: clarifaiFace.left_col * width,
         bottomRow: height - clarifaiFace.bottom_row * height,
-        rightCol: width - clarifaiFace.right_col * width
+        rightCol: width - clarifaiFace.right_col * width,
       };
     });
   };
 
-  const displayFaceBoxes = boxes => {
+  const displayFaceBoxes = (boxes) => {
     setBoxAreas(boxes);
   };
 
@@ -96,14 +105,14 @@ function App() {
       />
       {route === "signin" ? (
         <section className="container">
-        <SignIn
-          handleRouteChange={handleRouteChange}
-          handleSignIn={handleSignIn}
-        />
+          <SignIn
+            handleRouteChange={handleRouteChange}
+            handleSignIn={handleSignIn}
+          />
         </section>
       ) : route === "registration" ? (
         <section className="container">
-        <Registration handleRouteChange={handleRouteChange} />
+          <Registration handleRouteChange={handleRouteChange} />
         </section>
       ) : (
         <section className="container container--top">
@@ -111,6 +120,9 @@ function App() {
           <ImageLinkForm
             handleInputChange={handleInputChange}
             handleButtonSubmit={handleButtonSubmit}
+            inputUrl={imageUrl}
+            detectSelected={detectSelected}
+            handleButtonReset={handleButtonReset}
           />
           <FacialRecognitionSystem imageUrl={imageUrl} boxAreas={boxAreas} />
         </section>
