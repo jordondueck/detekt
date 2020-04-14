@@ -1,7 +1,7 @@
 import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, ErrorMessage } from "formik";
 import { ImageUrlSchema } from "../ValidateForm/ValidateForm";
-import { Button, FormControl, FormGroup } from "react-bootstrap";
+import { Button, FormGroup } from "react-bootstrap";
 import "./ImageLinkForm.css";
 import ImageInput from "../ImageInput/ImageInput";
 import ImageInputDisabled from "../ImageInputDisabled/ImageInputDisabled";
