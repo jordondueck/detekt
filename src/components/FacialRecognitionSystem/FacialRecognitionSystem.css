@@ -9,7 +9,7 @@
 
 .frs__image {
   /* height: 60vh; */
-  width: 60%;
+  width: 60vw;
   max-width: 650px;
   min-width: 350px;
   max-height: 65vh;
