@@ -3,6 +3,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { ImageUrlSchema } from "../ValidateForm/ValidateForm";
 import { Button, FormControl, FormGroup } from "react-bootstrap";
 import "./ImageLinkForm.css";
+import ImageInput from "../ImageInput/ImageInput";
+import ImageInputDisabled from "../ImageInputDisabled/ImageInputDisabled";
 
 const ImageLinkForm = ({
   handleInputChange,
@@ -37,45 +39,9 @@ const ImageLinkForm = ({
                 controlId="imageurl"
               >
                 {inputUrl === "" ? (
-                  <div className="input_container form-control">
-                    <Field name="imageUrl">
-                      {({ field, meta }) => (
-                        <FormControl
-                          {...field}
-                          className={
-                            meta.error && meta.touched
-                              ? "input--error form-control--clear"
-                              : "form-control--clear"
-                          }
-                          type="text"
-                          placeholder="https://example.com/images/example.jpg"
-                        />
-                      )}
-                    </Field>
-                  </div>
+                  <ImageInput />
                 ) : (
-                  <div className="input_container input_container--grey form-control">
-                    <Field name="imageUrl input_input">
-                      {({ field, meta }) => (
-                        <FormControl
-                          {...field}
-                          className={
-                            meta.error && meta.touched
-                              ? "input--error form-control--clear pr--75"
-                              : "form-control--clear pr--75"
-                          }
-                          type="text"
-                          placeholder="https://example.com/images/example.jpg"
-                          readOnly
-                        />
-                      )}
-                    </Field>
-                    <i
-                      className="fa fa-undo button--undo"
-                      aria-hidden="true"
-                      onClick={handleReset}
-                    ></i>
-                  </div>
+                  <ImageInputDisabled handleReset={handleReset} inputUrl={inputUrl} />
                 )}
                 <div className="error__wrapper">
                   <ErrorMessage
