@@ -1,26 +1,27 @@
 {
   "files": {
-    "main.css": "/detekt/static/css/main.83f71f5a.chunk.css",
-    "main.js": "/detekt/static/js/main.05f49fd7.chunk.js",
-    "main.js.map": "/detekt/static/js/main.05f49fd7.chunk.js.map",
-    "runtime-main.js": "/detekt/static/js/runtime-main.293b8af4.js",
-    "runtime-main.js.map": "/detekt/static/js/runtime-main.293b8af4.js.map",
+    "main.css": "/detekt/static/css/main.8c07d7be.chunk.css",
+    "main.js": "/detekt/static/js/main.b5decc41.chunk.js",
+    "main.js.map": "/detekt/static/js/main.b5decc41.chunk.js.map",
+    "runtime-main.js": "/detekt/static/js/runtime-main.d62458f4.js",
+    "runtime-main.js.map": "/detekt/static/js/runtime-main.d62458f4.js.map",
     "static/css/2.de424728.chunk.css": "/detekt/static/css/2.de424728.chunk.css",
-    "static/js/2.c49b60d2.chunk.js": "/detekt/static/js/2.c49b60d2.chunk.js",
-    "static/js/2.c49b60d2.chunk.js.map": "/detekt/static/js/2.c49b60d2.chunk.js.map",
+    "static/js/2.8a23c31a.chunk.js": "/detekt/static/js/2.8a23c31a.chunk.js",
+    "static/js/2.8a23c31a.chunk.js.map": "/detekt/static/js/2.8a23c31a.chunk.js.map",
     "index.html": "/detekt/index.html",
-    "precache-manifest.5e089fb2f27f50c2697523f59f50525e.js": "/detekt/precache-manifest.5e089fb2f27f50c2697523f59f50525e.js",
+    "precache-manifest.4bcc006c2a03d04a5809802be7af9565.js": "/detekt/precache-manifest.4bcc006c2a03d04a5809802be7af9565.js",
     "service-worker.js": "/detekt/service-worker.js",
     "static/css/2.de424728.chunk.css.map": "/detekt/static/css/2.de424728.chunk.css.map",
-    "static/css/main.83f71f5a.chunk.css.map": "/detekt/static/css/main.83f71f5a.chunk.css.map",
-    "static/js/2.c49b60d2.chunk.js.LICENSE.txt": "/detekt/static/js/2.c49b60d2.chunk.js.LICENSE.txt",
-    "static/media/logo.png": "/detekt/static/media/logo.63d10e19.png"
+    "static/css/main.8c07d7be.chunk.css.map": "/detekt/static/css/main.8c07d7be.chunk.css.map",
+    "static/js/2.8a23c31a.chunk.js.LICENSE.txt": "/detekt/static/js/2.8a23c31a.chunk.js.LICENSE.txt",
+    "static/media/detect-face.svg": "/detekt/static/media/detect-face.4cc8970e.svg",
+    "static/media/logo-noname.png": "/detekt/static/media/logo-noname.e8af678e.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.293b8af4.js",
+    "static/js/runtime-main.d62458f4.js",
     "static/css/2.de424728.chunk.css",
-    "static/js/2.c49b60d2.chunk.js",
-    "static/css/main.83f71f5a.chunk.css",
-    "static/js/main.05f49fd7.chunk.js"
+    "static/js/2.8a23c31a.chunk.js",
+    "static/css/main.8c07d7be.chunk.css",
+    "static/js/main.b5decc41.chunk.js"
   ]
 }
