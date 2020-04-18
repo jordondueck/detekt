@@ -58,7 +58,6 @@
 ## Roadmap
 
 * See the [Trello board](https://trello.com/b/mSeRGlfj) for a visual overview of the project.
-
 * See the [open issues](https://github.com/jordondueck/detekt/issues) for a list of proposed features (and known issues).
 
 
