@@ -1,11 +1,29 @@
-import React from "react";
+import React, {useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { RegisterSchema } from "../ValidateForm/ValidateForm";
 import { Button, FormControl, FormGroup } from "react-bootstrap";
 import Logo from "../Logo/Logo";
+import TermsAndConditions from "../TermsAndConditions/TermsAndConditions";
+import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
 
 const Registration = ({ handleRouteChange }) => {
+  const [viewTerms, setViewTerms] = useState(false);
+  const [viewPrivacy, setViewPrivacy] = useState(false);
+
+  const handleViewTerms = (event) => {
+    event.preventDefault();
+    setViewPrivacy(false);
+    setViewTerms(!viewTerms);
+  }
+
+  const handleViewPrivacy = (event) => {
+    event.preventDefault();
+    setViewTerms(false);
+    setViewPrivacy(!viewPrivacy);
+  }
+
   return (
+    <>
     <Formik
       initialValues={{ firstname: "", lastname: "", email: "", password: "", confirmpassword: "" }}
       validationSchema={RegisterSchema}
@@ -100,13 +118,28 @@ const Registration = ({ handleRouteChange }) => {
             </Field>
             <ErrorMessage className="error" name="confirmpassword" component="div" />
           </FormGroup>
-          
+          {/* <FormGroup controlId="acceptterms">
+            <Field name="acceptterms">
+              {({ field, meta }) => (
+                <FormControl
+                  {...field}
+                  className={meta.error && meta.touched ? "input--error" : ""}
+                  type="checkbox"
+                />
+              )}
+            </Field>
+            <label htmlFor="acceptterms" className="form-check-label">Accept<button className="button--text">Terms & Conditions</button></label>
+            <ErrorMessage className="error" name="acceptterms" component="div" />
+          </FormGroup> */}
           <Button variant="outline-dark" type="submit" disabled={isSubmitting}>
             Register
           </Button>
+          <small className="text-muted" style={{marginTop: "1rem"}}>By registering, you agree to the <button className="button--text" onClick={handleViewTerms}>Terms and Conditions</button> and <button className="button--text" onClick={handleViewPrivacy}>Privacy Policy</button></small>
         </Form>
       )}
     </Formik>
+    {viewTerms ? <TermsAndConditions setViewTerms={setViewTerms} /> : viewPrivacy ? <PrivacyPolicy handleViewTerms={handleViewTerms} setViewPrivacy={setViewPrivacy} /> : undefined}
+    </>
   );
 };
 
