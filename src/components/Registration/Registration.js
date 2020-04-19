@@ -7,7 +7,7 @@ import Logo from "../Logo/Logo";
 const Registration = ({ handleRouteChange }) => {
   return (
     <Formik
-      initialValues={{ firstname: "", lastname: "", email: "", password: "" }}
+      initialValues={{ firstname: "", lastname: "", email: "", password: "", confirmpassword: "" }}
       validationSchema={RegisterSchema}
       onSubmit={(values, { setSubmitting }) => {
         fetch("https://salty-mesa-37106.herokuapp.com/register", {
@@ -87,6 +87,20 @@ const Registration = ({ handleRouteChange }) => {
             </Field>
             <ErrorMessage className="error" name="password" component="div" />
           </FormGroup>
+          <FormGroup className="form-group--wide" controlId="confirmpassword">
+            <Field name="confirmpassword">
+              {({ field, meta }) => (
+                <FormControl
+                  {...field}
+                  className={meta.error && meta.touched ? "input--error" : ""}
+                  type="password"
+                  placeholder="Confirm password"
+                />
+              )}
+            </Field>
+            <ErrorMessage className="error" name="confirmpassword" component="div" />
+          </FormGroup>
+          
           <Button variant="outline-dark" type="submit" disabled={isSubmitting}>
             Register
           </Button>
