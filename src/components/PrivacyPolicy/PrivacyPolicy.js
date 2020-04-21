@@ -1,7 +1,14 @@
 import React, { useState } from "react";
-import { Button, Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
+import { withStyles, Button } from '@material-ui/core';
 
-const PrivacyPolicy = ({ handleViewTerms, setViewPrivacy }) => {
+const styles = () => ({
+  button: {
+    padding: 0
+  }
+});
+
+const PrivacyPolicy = ({ classes, handleViewTerms, setViewPrivacy }) => {
   const [show, setShow] = useState(true);
 
   const handleClose = () => {
@@ -24,7 +31,7 @@ const PrivacyPolicy = ({ handleViewTerms, setViewPrivacy }) => {
         <p style={{lineHeight: "1.5rem", marginTop: "1rem"}}>If you choose to use our Service, then you agree to the collection and use of information in relation with this policy. The Personal Information that we collect are used for providing and improving the Service. 
           We will not use or share your information with anyone except as described in this Privacy Policy.</p>
 
-        <p style={{lineHeight: "1.5rem", marginTop: "1rem"}}>The terms used in this Privacy Policy have the same meanings as in our <button className="button--text" onClick={handleViewTerms}>Terms and Conditions</button>, unless otherwise defined in this Privacy Policy.</p>
+        <p style={{lineHeight: "1.5rem", marginTop: "1rem"}}>The terms used in this Privacy Policy have the same meanings as in our <Button className={classes.button} color="default" onClick={handleViewTerms}>Terms and Conditions</Button>, unless otherwise defined in this Privacy Policy.</p>
 
         <h3 style={{lineHeight: "1rem", marginTop: "1.5rem"}}>Information Collection and Use</h3>
 
@@ -41,7 +48,7 @@ const PrivacyPolicy = ({ handleViewTerms, setViewPrivacy }) => {
             These changes are effective immediately, after they are posted on this page.</p>
 </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="contained" color="primary" onClick={handleClose}>
             Close
           </Button>
           {/* <Button variant="primary" onClick={handleClose}>
@@ -53,4 +60,4 @@ const PrivacyPolicy = ({ handleViewTerms, setViewPrivacy }) => {
   );
 }
 
-export default PrivacyPolicy
+export default withStyles(styles)(PrivacyPolicy);

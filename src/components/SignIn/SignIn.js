@@ -1,7 +1,8 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { SignInSchema } from "../ValidateForm/ValidateForm";
-import { Button, FormControl, FormGroup } from "react-bootstrap";
+import { FormControl, FormGroup } from "react-bootstrap";
+import { Button } from '@material-ui/core';
 import Logo from "../Logo/Logo";
 
 const SignIn = ({ handleRouteChange, handleSignIn }) => {
@@ -59,7 +60,7 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
             </Field>
             <ErrorMessage className="error" name="password" component="div" />
           </FormGroup>
-          <Button variant="outline-dark" type="submit">
+          <Button variant="contained" color="primary" type="submit">
             Sign In
           </Button>
         </Form>

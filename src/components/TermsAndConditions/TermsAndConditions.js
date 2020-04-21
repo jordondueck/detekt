@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Button, Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
+import { Button } from '@material-ui/core';
 
 const TermsAndConditions = ({ setViewTerms }) => {
   const [show, setShow] = useState(true);
@@ -76,7 +77,7 @@ const TermsAndConditions = ({ setViewTerms }) => {
           <p style={{lineHeight: "1.5rem", marginTop: "1rem"}}>These Terms will be governed by and interpreted in accordance with the laws of the British Columbia, Canada, and you submit to the non-exclusive jurisdiction of the provincial and federal courts located in Canada for the resolution of any disputes.</p>
 </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="contained" color="primary" onClick={handleClose}>
             Close
           </Button>
           {/* <Button variant="primary" onClick={handleClose}>

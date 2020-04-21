@@ -1,7 +1,8 @@
 import React, {useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { RegisterSchema } from "../ValidateForm/ValidateForm";
-import { Button, FormControl, FormGroup } from "react-bootstrap";
+import { FormControl, FormGroup } from "react-bootstrap";
+import { Button } from '@material-ui/core';
 import Logo from "../Logo/Logo";
 import TermsAndConditions from "../TermsAndConditions/TermsAndConditions";
 import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
@@ -131,7 +132,7 @@ const Registration = ({ handleRouteChange }) => {
             <label htmlFor="acceptterms" className="form-check-label">Accept<button className="button--text">Terms & Conditions</button></label>
             <ErrorMessage className="error" name="acceptterms" component="div" />
           </FormGroup> */}
-          <Button variant="outline-dark" type="submit" disabled={isSubmitting}>
+          <Button variant="contained" color="primary" type="submit" disabled={isSubmitting}>
             Register
           </Button>
           <small className="text-muted" style={{marginTop: "1rem"}}>By registering, you agree to the <button className="button--text" onClick={handleViewTerms}>Terms and Conditions</button> and <button className="button--text" onClick={handleViewPrivacy}>Privacy Policy</button></small>

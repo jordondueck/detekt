@@ -1,7 +1,8 @@
 import React from "react";
 import { Formik, Form, ErrorMessage } from "formik";
 import { ImageUrlSchema } from "../ValidateForm/ValidateForm";
-import { Button, FormGroup } from "react-bootstrap";
+import { FormGroup } from "react-bootstrap";
+import { Button } from '@material-ui/core';
 import "./ImageLinkForm.css";
 import ImageInput from "../ImageInput/ImageInput";
 import ImageInputDisabled from "../ImageInputDisabled/ImageInputDisabled";
@@ -62,7 +63,8 @@ const ImageLinkForm = ({
               ) : (
                 <Button
                   className="button--ml button--no-outline"
-                  variant={inputUrl === "" ? "primary" : "success"}
+                  variant={inputUrl === "" ? "contained" : "contained"}
+                  color="primary"
                   type="submit"
                 >
                   {inputUrl === "" ? "Load" : "Detect"}
