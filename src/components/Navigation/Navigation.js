@@ -5,6 +5,9 @@ import logo from "../Logo/logo_text.png";
 
 const StyledButton = styled(Button)`
   padding: 0;
+  &:hover {
+    background-color: transparent;
+  }
 `;
 
 const Navigation = ({ route, isSignedIn, handleRouteChange }) => {
@@ -21,7 +24,7 @@ const Navigation = ({ route, isSignedIn, handleRouteChange }) => {
               color="default"
               onClick={() => handleRouteChange("registration")}
             >
-              Registers
+              Register
             </StyledButton>
           </li>
         ) : route === "registration" ? (
