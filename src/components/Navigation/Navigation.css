@@ -1,0 +1,7 @@
+.button {
+  padding: 0;
+}
+
+.button:hover {
+  background-color: transparent;
+}

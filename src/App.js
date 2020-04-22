@@ -5,6 +5,7 @@ import Registration from "./components/Registration/Registration";
 // import Statistics from "./components/Statistics/Statistics";
 import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
 import FacialRecognitionSystem from "./components/FacialRecognitionSystem/FacialRecognitionSystem";
+import { StylesProvider } from "@material-ui/core";
 import "./App.css";
 
 function App() {
@@ -97,6 +98,7 @@ function App() {
   };
 
   return (
+    <StylesProvider injectFirst>
     <div className="App">
       <Navigation
         route={route}
@@ -128,6 +130,7 @@ function App() {
         </section>
       )}
     </div>
+    </StylesProvider>
   );
 }
 

@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { StylesProvider, Button } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import logo from "../Logo/logo_text.png";
+import "./Navigation.css";
 
 const StyledButton = styled(Button)`
   padding: 0;
@@ -12,7 +13,6 @@ const StyledButton = styled(Button)`
 
 const Navigation = ({ route, isSignedIn, handleRouteChange }) => {
   return (
-    <StylesProvider injectFirst>
     <nav>
       <ul className="nav-list">
         <li>
@@ -20,18 +20,19 @@ const Navigation = ({ route, isSignedIn, handleRouteChange }) => {
         </li>
         {route === "signin" ? (
           <li>
-            <StyledButton
+            <Button
               color="default"
+              className="button"
               onClick={() => handleRouteChange("registration")}
             >
               Register
-            </StyledButton>
+            </Button>
           </li>
         ) : route === "registration" ? (
           <li>
             <Button
               color="default"
-              className="button--text"
+              className="button"
               onClick={() => handleRouteChange("signin")}
             >
               Sign In
@@ -50,7 +51,6 @@ const Navigation = ({ route, isSignedIn, handleRouteChange }) => {
         ) : undefined}
       </ul>
     </nav>
-    </StylesProvider>
   );
 };
 
