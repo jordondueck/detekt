@@ -73,6 +73,7 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
                   id="email"
                   type="text"
                   onChange={handleChange("email")}
+                  labelWidth={40}
                 />
               </FormControl>
             )}
@@ -107,6 +108,7 @@ const SignIn = ({ handleRouteChange, handleSignIn }) => {
                       </IconButton>
                     </InputAdornment>
                   }
+                  labelWidth={70}
                 />
               </FormControl>
             )}
