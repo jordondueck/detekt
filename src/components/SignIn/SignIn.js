@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { SignInSchema } from "../ValidateForm/ValidateForm";
-import { FormGroup } from "react-bootstrap";
+// import { FormGroup } from "react-bootstrap";
 import IconButton from "@material-ui/core/IconButton";
 import OutlinedInput from "@material-ui/core/OutlinedInput";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -11,7 +11,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
+// import TextField from "@material-ui/core/TextField";
 import Logo from "../Logo/Logo";
 
 const SignIn = ({ handleRouteChange, handleSignIn }) => {
