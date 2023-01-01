@@ -15,7 +15,7 @@ function App() {
   const [user, setUser] = useState([{}]);
   const [detectSelected, setDetectSelected] = useState(false);
 
-  fetch("https://salty-mesa-37106.herokuapp.com/", {
+  fetch("https://detekt-api.onrender.com/", {
     method: "get",
     headers: { "Content-Type": "application/json" },
   }).catch(console.log);
@@ -51,7 +51,7 @@ function App() {
 
   const handleButtonSubmit = (url) => {
     // Submit image URL to Clarifai API
-    fetch("https://salty-mesa-37106.herokuapp.com/clarifai", {
+    fetch("https://detekt-api.onrender.com/clarifai", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -61,7 +61,7 @@ function App() {
       .then((response) => response.json())
       .then((response) => {
         // Update database with items detected
-        fetch("https://salty-mesa-37106.herokuapp.com/image", {
+        fetch("https://detekt-api.onrender.com/image", {
           method: "post",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
