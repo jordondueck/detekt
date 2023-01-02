@@ -10,7 +10,7 @@ const Registration = ({ handleRouteChange }) => {
       initialValues={{ firstname: "", lastname: "", email: "", password: "" }}
       validationSchema={RegisterSchema}
       onSubmit={(values, { setSubmitting }) => {
-        fetch("https://salty-mesa-37106.herokuapp.com/register", {
+        fetch("https://detekt-api.onrender.com/register", {
           method: "post",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
